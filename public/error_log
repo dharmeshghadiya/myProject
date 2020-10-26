@@ -1,0 +1,250 @@
+[18-Aug-2020 05:19:14 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/rydezilla/public_html/public/file_reading.php on line 38
+[18-Aug-2020 05:19:37 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/rydezilla/public_html/public/file_reading.php on line 38
+[08-Sep-2020 02:20:17 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:17 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:18 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:18 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:19 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:19 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:20 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:20 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:21 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:21 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:21 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:21 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:23 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:23 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:24 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:24 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:25 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:25 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:26 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:26 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:27 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:27 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:28 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:28 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:29 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:29 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:30 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:30 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:31 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:31 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:32 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:32 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:33 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:33 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:34 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:34 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:35 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:35 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:36 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:36 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:37 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:37 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:38 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:38 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:39 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:39 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:40 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:40 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:41 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:41 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:42 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:42 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:43 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:43 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:44 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:44 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:45 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:45 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:46 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:46 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:47 UTC] PHP Warning:  Uncaught ErrorException: require(/home/rydezilla/public_html/routes/web.php): failed to open stream: No such file or directory in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35
+Stack trace:
+#0 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(/home/r...', '/home/rydezilla...', 35, Array)
+#1 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require()
+#2 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(415): Illuminate\Routing\RouteFileRegistrar->register('/home/rydezilla...')
+#3 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(373): Illuminate\Routing\Router->loadRoutes('/home/rydezilla...')
+#4 /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminat in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
+[08-Sep-2020 02:20:47 UTC] PHP Fatal error:  Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/home/rydezilla/public_html/routes/web.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/rydezilla/public_html/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php on line 35
