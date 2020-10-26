@@ -33,7 +33,7 @@ class GoogleLoginRequest extends FormRequest
      */
     public function rules()
     {
-        //dd($this->id);
+
         return [
             'google_id' => 'required',
             'name'      => 'required|max:191',

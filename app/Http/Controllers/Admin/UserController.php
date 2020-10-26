@@ -38,7 +38,6 @@ class UserController extends Controller
 
             $users = User::where('user_type', 'user')->get();
 
-            // dd(DB::getQueryLog());
             return Datatables::of($users)
                 ->addColumn('status', function($users){
                     if($users->status == 'Active'){

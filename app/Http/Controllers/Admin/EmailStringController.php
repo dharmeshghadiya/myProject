@@ -20,11 +20,11 @@ class EmailStringController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
+
             $email_strings = EmailString::listsTranslations('name')
                 ->select('email_strings.id', 'email_strings.template_name', 'email_strings.name_key')
                 ->get();
-            // dd(DB::getQueryLog());
+
             return Datatables::of($email_strings)
                 ->addColumn('action', function($email_strings){
                     $edit_button = '<a href="' . route('admin::emailString.edit', [$email_strings->id]) . '" class="btn btn-icon btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('emailString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

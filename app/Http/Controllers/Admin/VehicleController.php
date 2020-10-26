@@ -53,15 +53,13 @@ class VehicleController extends Controller
     {
 
         if($request->ajax()){
-            //DB::enableQueryLog();
             $vehicles = Vehicle::where('company_address_id', $request->branch_id)
                 ->with([
                     'ryde' => function($query){
                         $query->with('brand', 'modelYear', 'color');
                     },
                 ])->get();
-            //dd(DB::getQueryLog());
-            // dd($vehicles);
+
             return Datatables::of($vehicles)
                 ->addColumn('make', function($vehicles){
                     return $vehicles->ryde->brand->name;

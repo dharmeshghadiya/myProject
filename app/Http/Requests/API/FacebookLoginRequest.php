@@ -33,7 +33,6 @@ class FacebookLoginRequest extends FormRequest
      */
     public function rules()
     {
-        //dd($this->id);
         return [
             'facebook_id' => 'required',
             'name'        => 'required|max:191',

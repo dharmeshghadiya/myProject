@@ -31,7 +31,7 @@ class LoginController extends Controller
                 ->withInput();
 
         }
-        //DB::enableQueryLog();
+
 
         $user = User::where('email', $request->input('email'))
             ->where(function ($query) {
@@ -40,8 +40,6 @@ class LoginController extends Controller
             })
             ->where('status', 'Active')
             ->first();
-       // dd(DB::getQueryLog());
-       // dd($user);
 
         if (!$user) {
             return redirect()

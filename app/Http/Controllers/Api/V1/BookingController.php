@@ -281,14 +281,13 @@ class BookingController extends Controller
                 $array['tax_name'] = $company_details->country->tax_name;
             }
 
-            // DB::enableQueryLog();
 
             $extras = BookingDetails::with([
                 'vehicleExtra' => function($query){
                     $query->with('extra');
                 },
             ])->where('booking_id', $request->input('booking_id'))->get();
-            //  dd(DB::getQueryLog());
+
             $extra_array = [];
             foreach($extras as $key => $extra){
                 $extra_array[$key]['id'] = $extra->vehicleExtra->extra->id;

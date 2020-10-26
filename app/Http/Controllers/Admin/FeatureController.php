@@ -25,11 +25,11 @@ class FeatureController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
+
             $categories = Feature::listsTranslations('name')
                 ->select('features.id','features.image')
                 ->get();
-            // dd(DB::getQueryLog());
+
             return Datatables::of($categories)
                 ->addColumn('action', function ($categories) {
                     $edit_button = '<a href="' . route('admin::feature.edit', [$categories->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

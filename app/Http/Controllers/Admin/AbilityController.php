@@ -18,9 +18,7 @@ class AbilityController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
             $abilities = Ability::get();
-            // dd(DB::getQueryLog());
             return Datatables::of($abilities)->make(true);
         }
         return view('admin.abilities.index');

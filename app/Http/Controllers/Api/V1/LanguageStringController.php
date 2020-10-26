@@ -23,10 +23,10 @@ class LanguageStringController extends Controller
                 $whatsapp_no = $setting->meta_value;
             }
         }
-        // DB::enableQueryLog();
+
         $Language_strings = LanguageString::where('app_or_panel', 1)
             ->get();
-        // dd(DB::getQueryLog());
+
 
         $Language_string_screen = $language_string = [];
         foreach($Language_strings as $language_string){

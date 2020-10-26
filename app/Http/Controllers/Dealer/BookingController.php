@@ -50,9 +50,9 @@ class BookingController extends Controller
     {
 
         if($request->ajax()){
-            //DB::enableQueryLog();
+
             $bookings = Booking::where('company_id', Session('company_id'))->with('company', 'companyAddress', 'user')->get();
-            //dd(DB::getQueryLog());
+
             return Datatables::of($bookings)
                 ->addColumn('id', function($bookings){
                     return $bookings->transaction_id;
@@ -314,7 +314,7 @@ class BookingController extends Controller
 
         $start_date = Carbon::parse($pick_up_date)->format("Y-m-d H:i:s");
         $end_date = Carbon::parse($return_date)->format("Y-m-d H:i:s");
-        // dd($start_date);
+
 
         $no_of_days = Carbon::parse($pick_up_date)->diffInDays($end_date);
         $no_of_hour = Carbon::parse($pick_up_date)->diffInHours($end_date);
@@ -377,7 +377,7 @@ class BookingController extends Controller
 
     public function inRideBetween($start_date, $end_date, $vehicle_id)
     {
-        // DB::enableQueryLog();
+
         return Booking::where(function($query) use ($start_date, $end_date){
             $query->whereBetween('start_date', [$start_date, $end_date]);
             $query->OrWhereBetween('end_date', [$start_date, $end_date]);
@@ -386,7 +386,7 @@ class BookingController extends Controller
             ->where('status','!=', 'Review')
             ->where('status','!=', 'Cancelled')
             ->where('status','!=', 'Completed')->count();
-        // dd(DB::getQueryLog());
+
 
     }
 

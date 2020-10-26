@@ -22,9 +22,7 @@ class BecomeADealerController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $becomeADealers = BecomeADealer::all();
-            // dd(DB::getQueryLog());
             return Datatables::of($becomeADealers)
                 ->addColumn('status', function($becomeADealers){
                     $status = '';

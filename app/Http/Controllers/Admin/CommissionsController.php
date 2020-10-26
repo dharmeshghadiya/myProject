@@ -23,9 +23,7 @@ class CommissionsController extends Controller
     public function getCommission(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $companies = Company::get();
-            // dd(DB::getQueryLog());
             return Datatables::of($companies)
                 ->addColumn('action', function($companies){
                     $past_transaction_button = '<a href="' . route('admin::past-transaction', [$companies->id]) . '" class="btn btn-secondary btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.view_past_transaction') . '"><i class="bx bx-bullseye font-size-16 align-middle"></i></a>';
@@ -96,9 +94,7 @@ class CommissionsController extends Controller
     public function getPastTransaction(Request $request, $id)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $commissions = Commission::where('company_id', $id)->orderBy('id', 'DESC')->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($commissions)
                 ->addColumn('id', function($commissions){
                     if($commissions->booking_id != null){

@@ -41,7 +41,6 @@ class AdminLanguage
                 ->select('language_strings.name_key', 'language_string_translations.name')
                 ->get();
             foreach($response as $setting){
-                //dd($setting->name_key);
                 Config::set('languageString.' . $setting->name_key, $setting->name);
             }
         }

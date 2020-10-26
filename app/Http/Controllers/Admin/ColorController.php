@@ -28,11 +28,10 @@ class ColorController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
+
             $colors = Color::listsTranslations('name')
                 ->select('colors.id')
                 ->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($colors)
                 ->addColumn('action', function($colors){
                     $edit_button = '<a href="' . route('admin::color.edit', [$colors->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

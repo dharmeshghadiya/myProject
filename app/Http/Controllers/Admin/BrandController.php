@@ -28,9 +28,7 @@ class BrandController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $brands = Brand::get();
-            // dd(DB::getQueryLog());
             return Datatables::of($brands)
                 ->addColumn('action', function($brands){
                     $edit_button = '<a href="' . route('admin::brand.edit', [$brands->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

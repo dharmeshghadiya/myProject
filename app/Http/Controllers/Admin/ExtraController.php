@@ -20,11 +20,11 @@ class ExtraController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
+
             $extras = Extra::listsTranslations('name')
                 ->select('extras.id')
                 ->get();
-            // dd(DB::getQueryLog());
+
             return Datatables::of($extras)
                 ->addColumn('action', function ($extras) {
                     $edit_button = '<a href="' . route('admin::extra.edit', [$extras->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
