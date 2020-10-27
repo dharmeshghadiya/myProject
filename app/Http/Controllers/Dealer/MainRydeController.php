@@ -83,9 +83,6 @@ class MainRydeController extends Controller
             }
 
             $vehicles = $vehicles->get();
-            //dd($vehicles);
-            //dd(DB::getQueryLog());
-            //dd($vehicles);
             return Datatables::of($vehicles)
                 ->addColumn('address', function($vehicles){
                     return $vehicles->companyAddress->address . '(' . $vehicles->companyAddress->service_distance . ' KM)';
@@ -124,7 +121,6 @@ class MainRydeController extends Controller
                         ->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $checkAvailable=VehicleNotAvailable::where('vehicle_id',$vehicles->id)
-                        //->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     if($checkBooking==1){
                         $status = '<span class=" badge badge-info">' . config('languageString.booked') . '</span>';
@@ -149,7 +145,6 @@ class MainRydeController extends Controller
                         ->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $checkAvailable=VehicleNotAvailable::where('vehicle_id',$vehicles->id)
-                        //->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $sold_button = ''; $retire_button = ''; $delete_button = ''; $status_button = '';
                     $edit_button = '<a href="' . route('dealer::ryde.edit', [$vehicles->company_address_id, $vehicles->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -163,7 +158,6 @@ class MainRydeController extends Controller
                         $sold_button = '<button data-id="' . $vehicles->id . '" data-status="' . $status . '" class="sold btn btn-sm btn btn-icon btn-primary waves-effect waves-light" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . $translate_status . '" ><i class="bx bxs-cart-download"></i></button>';
                         $retired_status = 'Retired';
                         $retire_translate_status = config('languageString.retired');
-                        //$delete_button = '<button data-id="' . $vehicles->id . '" class="delete-single btn btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="' . config('languageString.delete') . '"><i class="bx bx-trash font-size-16 align-middle"></i></button>';
                         $retire_button = '<button data-id="' . $vehicles->id . '" data-status="' . $retired_status . '" class="status-change btn btn-sm btn btn-icon btn-dark waves-effect waves-light" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . $retire_translate_status . '" ><i class="fa fa-stop-circle font-size-16 align-middle"></i></button>';
                     }if($checkBooking==0 && $vehicles->status == 'Active'){
                         $vehicle_not_available = '<a href="' . route('dealer::vehicleNotAvailable', [$vehicles->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="' . config('languageString.ryde_not_availability') . '"><i class="bx bx-error-circle"></i></a>';
@@ -177,7 +171,6 @@ class MainRydeController extends Controller
                 ->make(true);
         }
 
-        //$company_address = CompanyAddress::where('id', $id)->first();
         $companyAddresses = CompanyAddress::where('company_id', Session('company_id'))->get();
         $colors = Color::all();
         $years = ModelYear::all();

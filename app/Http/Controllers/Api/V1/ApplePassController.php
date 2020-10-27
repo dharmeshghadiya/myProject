@@ -26,9 +26,8 @@ class ApplePassController extends Controller
         ])->where('id', $id)->first();
         if($booking){
 
-            //dd($booking->vehicles->ryde->brand->translate('en')->name);
 
-            $pass_identifier = rand();  // This, if set, it would allow for retrieval later on of the created Pass
+            $pass_identifier = rand();
 
             $pass = new PassGenerator($pass_identifier);
 
@@ -89,22 +88,13 @@ class ApplePassController extends Controller
                     ],
                 ],
             ];
-            //dd($pass_definition)
 
             $pass->setPassDefinition($pass_definition);
 
-            // Definitions can also be set from a JSON string
-            // $pass->setPassDefinition(file_get_contents('/path/to/pass.json));
-
-            // Add assets to the PKPass package
-
-            // $image_name = $booking->vehicles->ryde->image;
             $pass->addAsset(base_path('public/certificate/background.png'));
-            //  $pass->addAsset(base_path('public/certificate/thumbnail.png'));
             $pass->addAsset(base_path('public/certificate/icon.png'));
             $pass->addAsset(base_path('public/certificate/logo.png'));
 
-            //dd($pass);
             $pkpass = $pass->create();
             return new Response($pkpass, 200, [
                 'Content-Transfer-Encoding' => 'binary',

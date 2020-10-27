@@ -31,7 +31,7 @@
                                     <input type="text" class="form-control"
                                            name="code"
                                            id="code"
-                                           placeholder="Phone Code Name" required />
+                                           placeholder="Phone Code Name" required/>
                                     <div class="help-block with-errors error"></div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                     <input type="text" class="form-control"
                                            name="country_code"
                                            id="country_code"
-                                           placeholder="Country Code" required />
+                                           placeholder="Country Code" required/>
                                     <div class="help-block with-errors error"></div>
                                 </div>
                             </div>
@@ -50,45 +50,57 @@
                             @foreach($languages as $language)
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="{{ $language->language_code }}_name">{{ $language->name }} {{ config('languageString.name') }}<span
+                                        <label
+                                            for="{{ $language->language_code }}_name">{{ $language->name }} {{ config('languageString.name') }}
+                                            <span
                                                 class="error">*</span></label>
                                         <input type="text" class="form-control"
                                                name="{{ $language->language_code }}_name"
                                                id="{{ $language->language_code }}_name"
-                                               placeholder="{{ $language->name }} {{ config('languageString.name') }}" required/>
+                                               placeholder="{{ $language->name }} {{ config('languageString.name') }}"
+                                               required/>
                                         <div class="help-block with-errors error"></div>
                                     </div>
                                 </div>
                             @endforeach
 
-                             <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="tax_percentage">{{ config('languageString.tax_percentage') }} </label>
-                                            <div class="input-group mb-3">
-
-                                                <input type="text" name="tax_percentage"
-                                                       class="form-control" placeholder="{{ config('languageString.tax_percentage') }}"
-
-                                                       id="tax_percentage">
-                                                <div class="input-group-prepend">
-
-                                                        <span class="input-group-text"
-                                                              id="tax_percentage">%</span>
-
-                                                </div>
-                                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="tax_percentage">{{ config('languageString.tax_percentage') }} </label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="tax_percentage"
+                                               class="form-control"
+                                               placeholder="{{ config('languageString.tax_percentage') }}"
+                                               id="tax_percentage">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="tax_percentage">%</span>
                                         </div>
-                        </div>
-
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="tax_percentage">{{ config('languageString.timezone') }} </label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="timezone"
+                                               class="form-control"
+                                               placeholder="{{ config('languageString.timezone') }}"
+                                               id="timezone" required>
+                                    </div>
+                                </div>
+                            </div>
                             @foreach($languages as $language)
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="{{ $language->language_code }}_tax_name">{{ $language->name }} {{ config('languageString.tax_name') }}<span
+                                        <label
+                                            for="{{ $language->language_code }}_tax_name">{{ $language->name }} {{ config('languageString.tax_name') }}
+                                            <span
                                                 class="error">*</span></label>
                                         <input type="text" class="form-control"
                                                name="{{ $language->language_code }}_tax_name"
                                                id="{{ $language->language_code }}_tax_name"
-                                               placeholder="{{ $language->name }} {{ config('languageString.tax_name') }}" required/>
+                                               placeholder="{{ $language->name }} {{ config('languageString.tax_name') }}"
+                                               required/>
                                         <div class="help-block with-errors error"></div>
                                     </div>
                                 </div>
@@ -97,8 +109,10 @@
                             <div class="col-12">
                                 <div class="form-group mb-0 mt-3 justify-content-end">
                                     <div>
-                                        <button type="submit" class="btn btn-success">{{ config('languageString.submit') }}</button>
-                                        <a href="{{ route('admin::country.index') }}" class="btn btn-secondary">{{ config('languageString.cancel') }}</a>
+                                        <button type="submit"
+                                                class="btn btn-success">{{ config('languageString.submit') }}</button>
+                                        <a href="{{ route('admin::country.index') }}"
+                                           class="btn btn-secondary">{{ config('languageString.cancel') }}</a>
                                     </div>
                                 </div>
 

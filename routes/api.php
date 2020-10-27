@@ -18,14 +18,11 @@ Route::prefix('v1')->name('api.v1.')->namespace('Api\V1')->group(function(){
         Route::post('googleLogin', 'UserController@googleLogin')->name('googleLogin');
         Route::post('appleLogin', 'UserController@appleLogin')->name('appleLogin');
 
-        //Route::get('passGenrate', 'PassGenrate@index')->name('passGenrate');
-
         Route::post('forgotPassword', 'UserController@forgotPassword')->name('forgotPassword');
         Route::post('resetPassword', 'UserController@resetPassword')->name('resetPassword');
 
         Route::get('applePass/{id}', 'ApplePassController@index')->name('applePass');
         Route::group(['middleware' => ['jwt.verify']], function(){
-            // Route::post('changePassword', 'UserController@changePassword')->name('changePassword');
             Route::post('checkOut', 'BookingController@index')->name('checkOut');
             Route::get('refreshToken', 'UserController@refreshToken')->name('refreshToken');
             Route::post('updateProfile', 'UserController@updateProfile')->name('updateProfile');
@@ -60,7 +57,6 @@ Route::prefix('v1')->name('api.v1.')->namespace('Api\V1')->group(function(){
         Route::get('languages', 'LanguageController@index')->name('languages');
         Route::get('languageString/{locale}', 'LanguageStringController@index')->name('languageString');
         Route::get('countries', 'CountryController@index')->name('countries');
-
 
     });
 });

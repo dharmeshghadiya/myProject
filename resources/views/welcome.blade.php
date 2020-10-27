@@ -33,11 +33,11 @@
 </head>
 
 <body>
-  
+
   <div id="preloader">
     <div data-loader="circle-side"></div>
   </div><!-- /Preload -->
-  
+
   <div id="loader_form">
     <div data-loader="circle-side-2"></div>
   </div><!-- /loader_form -->
@@ -59,17 +59,6 @@
                             <li><a href="#"><i class="icon-linkedin"></i></a></li>
                         </ul>
                     </div>
-                    <!-- /social -->
-                   <!--  <nav>
-                        <ul class="cd-primary-nav">
-                            <li><a href="index.html" class="animated_link">Register Version</a></li>
-                            <li><a href="reservation_version.html" class="animated_link">Reservation Version</a></li>
-                            <li><a href="questionare_version.html" class="animated_link">Questionare Version</a></li>
-                            <li><a href="review_version.html" class="animated_link">Review Version</a></li>
-                            <li><a href="about.html" class="animated_link">About Us</a></li>
-                            <li><a href="contacts.html" class="animated_link">Contact Us</a></li>
-                        </ul>
-                    </nav> -->
                 </div>
             </div>
     </div>
@@ -104,7 +93,7 @@
 
                 <div class="step">
                   <h3 class="main_question"><strong>1/3</strong>Please fill with business details</h3>
-                  
+
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -137,7 +126,7 @@
                        Logo <input type="file"  id="logo" name="logo" class="form-control required ">
                       </div>
                     </div>
-                    
+
                   </div>
                   <!-- /row -->
                 </div>
@@ -209,7 +198,7 @@
 
                   </div>
 
-                  
+
                   <!-- /row -->
                 </div>
                 <!-- /step-->
@@ -271,7 +260,7 @@
                         Trade License Doc<input type="file"  class="form-control required " name="trade_license_doc" id="trade_license_doc">
                       </div>
                     </div>
-                    
+
 
                   </div>
                   <div class="form-group terms">
@@ -297,7 +286,7 @@
       </div><!-- /Row -->
     </div><!-- /Form_container -->
   </main>
-  
+
   <footer id="home" class="clearfix">
     <p>© {{date('Y')}} RydeZilla</p>
     <ul>
@@ -307,7 +296,7 @@
     </ul>
   </footer>
   <!-- end footer-->
-  
+
   <div class="cd-overlay-nav">
     <span></span>
   </div>
@@ -374,20 +363,20 @@
 </script>
   <script src="{{URL::asset('assets/become-a-dealer/js/jquery-3.2.1.min.js')}}"></script>
   <!-- Common script -->
-  
+
   <script src="{{URL::asset('assets/become-a-dealer/js/common_scripts_min.js')}}"></script>
   <!-- Wizard script -->
-  
+
   <!-- Menu script -->
   <script src="{{URL::asset('assets/become-a-dealer/js/velocity.min.js')}}"></script>
   <script src="{{URL::asset('assets/become-a-dealer/js/main.js')}}"></script>
   <!-- Theme script -->
   <script src="{{URL::asset('assets/become-a-dealer/js/functions.js')}}"></script>
-  
+
   <script src="{{URL::asset('assets/become-a-dealer/js/datepicker_func.js')}}"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjbtflnGL0mEj7aHh9VOHPAa_0cqbJabY&libraries=places&callback=initMap" async defer> </script>
   <script src="{{URL::asset('assets/become-a-dealer/js/registration_wizard_func.js')}}"></script>
- 
+
 </body>
 </html>

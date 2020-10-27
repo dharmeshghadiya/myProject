@@ -88,15 +88,14 @@
                                                                style="display: inline-block; width: 283px; height: 30px; vertical-align: top;"></canvas></span>
                         </div>
                 </div>
-       
+
     </div>
     <div class="row row-sm row-deck">
-                    
+
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <div class="card card-table-two">
                             <div class="d-flex justify-content-between">
                                 <h4 class="card-title mb-1">Top 5 Dealer By Sales</h4>
-                                <i class="mdi mdi-dots-horizontal text-gray"></i>
                             </div>
                             <span class="tx-12 tx-muted mb-3 ">This is your most recent earnings for today's date.</span>
                             <div class="table-responsive country-table">
@@ -220,15 +219,14 @@
                                                                style="display: inline-block; width: 283px; height: 30px; vertical-align: top;"></canvas></span>
                         </div>
                 </div>
-       
+
     </div>
     <div class="row row-sm">
-                    <div class="col-md-12 col-lg-12 col-xl-7">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
                         <div class="card">
                             <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
                                 <div class="d-flex justify-content-between">
                                     <h4 class="card-title mb-0">Earning Per Month</h4>
-                                    <i class="mdi mdi-dots-horizontal text-gray"></i>
                                 </div>
                                 <!-- <p class="tx-12 text-muted mb-0">Order Status and Tracking. Track your order from ship date to arrival. To begin, enter your order number.</p> -->
                             </div>
@@ -251,15 +249,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
     </div>
     <div class="row row-sm row-deck">
-                    
+
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <div class="card card-table-two">
                             <div class="d-flex justify-content-between">
                                 <h4 class="card-title mb-1">Upcoming Pickups & Upcoming Returns</h4>
-                                <i class="mdi mdi-dots-horizontal text-gray"></i>
                             </div>
                            <!--  <span class="tx-12 tx-muted mb-3 ">This is your most recent earnings for today's date.</span> -->
                             <div class="table-responsive country-table">

@@ -40,13 +40,13 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $driver_requirement->name }}</td>
-                                    <td><a href="{{ route('admin::driverRequirement.edit', [$driver_requirement->id,$country->id]) }}"
-                                           class="btn btn-sm btn-outline-info waves-effect waves-light"
+                                    <td>
+                                        <button href="{{ route('admin::driverRequirement.edit', [$driver_requirement->id,$country->id]) }}"
+                                           class="btn-sm btn  btn-info btn-icon"
                                            data-toggle="tooltip" data-placement="top" title="{{ config('languageString.edit') }}"><i
-                                                class="bx bx-pencil font-size-16 align-middle"></i></a>
-
+                                                data-effect="effect-fall"  class="bx bx-pencil font-size-16 align-middle"></i></button>
                                         <button data-id="{{ $driver_requirement->id }}" data-country-id="{{ $country->id }}"
-                                                class="delete-single btn btn-sm btn-outline-danger waves-effect waves-light"
+                                                class="delete-single btn-sm btn  btn-danger btn-icon"
                                                 data-toggle="tooltip" data-placement="top" title="{{ config('languageString.delete') }}"><i
                                                 class="bx bx-trash font-size-16 align-middle"></i>
                                         </button>

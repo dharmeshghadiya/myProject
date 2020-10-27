@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-use App\Country;
+use App\Models\Country;
 
 Route::get('/', function(){
     $countries = Country::all();
@@ -186,7 +186,7 @@ Route::group(['namespace' => 'Dealer', 'as' => 'dealer::', 'prefix' => 'dealer']
         Route::post('getVehicleDetails', 'BookingController@getVehicleDetails');
         Route::post('getFinalAmount', 'BookingController@getFinalAmount');
         Route::post('addBooking', 'BookingController@addBooking');
-        
+
         Route::get('dealerChangePassword', 'PasswordController@index')->name('dealerChangePassword');
 
         Route::post('changePassword', 'PasswordController@changePassword')->name('changePassword');
@@ -199,5 +199,3 @@ Route::group(['namespace' => 'Dealer', 'as' => 'dealer::', 'prefix' => 'dealer']
     });
     Route::post('logout', 'AdminController@logout')->name('logout');
 });
-
-//\App\User::where('id', 6)->update(['password'=>bcrypt(123456789)]);

@@ -20,11 +20,9 @@ class LanguageStringController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $language_strings = LanguageString::listsTranslations('name')
                 ->select('language_strings.id', 'language_strings.screen_name', 'language_strings.name_key', 'language_strings.app_or_panel')
                 ->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($language_strings)
                 ->addColumn('action', function($language_strings){
                     $edit_button = '<a href="' . route('admin::languageString.edit', [$language_strings->id]) . '" class="btn btn-icon btn-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -133,16 +131,6 @@ class LanguageStringController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -159,18 +147,6 @@ class LanguageStringController extends Controller
         } else{
             abort(404);
         }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

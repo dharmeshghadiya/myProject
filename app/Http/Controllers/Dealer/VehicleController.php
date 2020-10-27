@@ -40,15 +40,12 @@ class VehicleController extends Controller
     {
 
         if($request->ajax()){
-//            DB::enableQueryLog();
             $vehicles = Vehicle::where('company_address_id', $request->branch_id)
                 ->with([
                     'ryde' => function($query){
                         $query->with('brand', 'modelYear', 'color');
                     },
                 ])->get();
-//            dd(DB::getQueryLog());
-            // dd($vehicles);
             return Datatables::of($vehicles)
                 ->addColumn('make', function($vehicles){
                     return $vehicles->ryde->brand->name;
@@ -72,7 +69,6 @@ class VehicleController extends Controller
                         ->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $checkAvailable=VehicleNotAvailable::where('vehicle_id',$vehicles->id)
-                        //->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     if($checkBooking==1){
                         $status = '<span class=" badge badge-info">' . config('languageString.booked') . '</span>';
@@ -97,7 +93,6 @@ class VehicleController extends Controller
                         ->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $checkAvailable=VehicleNotAvailable::where('vehicle_id',$vehicles->id)
-                        //->whereRaw("? BETWEEN start_date AND end_date",[date('Y-m-d H:i:s')])
                         ->count();
                     $sold_button = ''; $retire_button = ''; $delete_button = ''; $status_button = '';
                     $edit_button = '<a href="' . route('dealer::ryde.edit', [$vehicles->company_address_id, $vehicles->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -111,7 +106,6 @@ class VehicleController extends Controller
                         $sold_button = '<button data-id="' . $vehicles->id . '" data-status="' . $status . '" class="sold btn btn-sm btn btn-icon btn-primary waves-effect waves-light" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . $translate_status . '" ><i class="bx bxs-cart-download"></i></button>';
                         $retired_status = 'Retired';
                         $retire_translate_status = config('languageString.retired');
-                        //$delete_button = '<button data-id="' . $vehicles->id . '" class="delete-single btn btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="' . config('languageString.delete') . '"><i class="bx bx-trash font-size-16 align-middle"></i></button>';
                         $retire_button = '<button data-id="' . $vehicles->id . '" data-status="' . $retired_status . '" class="status-change btn btn-sm btn btn-icon btn-dark waves-effect waves-light" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . $retire_translate_status . '" ><i class="fa fa-stop-circle font-size-16 align-middle"></i></button>';
                     }if($checkBooking==0 && $vehicles->status == 'Active'){
                         $vehicle_not_available = '<a href="' . route('dealer::vehicleNotAvailable', [$vehicles->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="' . config('languageString.ryde_not_availability') . '"><i class="bx bx-error-circle"></i></a>';
@@ -444,17 +438,6 @@ class VehicleController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param $branch_id
@@ -509,18 +492,6 @@ class VehicleController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param int $id
@@ -538,18 +509,14 @@ class VehicleController extends Controller
         return response()->json(['success' => true, 'message' => trans('adminMessages.vehicle_deleted')]);
     }
 
-    /*
-     * Change Ryde Vehicle Status
-     */
+
     public function changeStatus($id, $status)
     {
         Vehicle::where('id', $id)->update(['status' => $status]);
             return response()->json(['success' => true, 'message' => config('languageString.change_status')]);
     }
 
-    /*
-     * add vehicle for not available
-     */
+
     public function vehicleNotAvailable($id)
     {
         $vehicle = Vehicle::with('companyAddress')->where('id', $id)->first();
@@ -566,9 +533,6 @@ class VehicleController extends Controller
         }
     }
 
-    /*
-     * update vehicle for not available
-     */
     public function UpdateVehicleNotAvailable(Request $request)
     {
         $validator_array = [
@@ -625,9 +589,6 @@ class VehicleController extends Controller
         }
     }
 
-    /*
-     * delete vehicle not available
-     */
     public function vehicleNotAvailableDelete($id, $vehicle_id)
     {
 
@@ -635,9 +596,6 @@ class VehicleController extends Controller
         return response()->json(['success' => true, 'message' => trans('adminMessages.vehicleNotAvailable_deleted'), 'id' => $vehicle_id]);
     }
 
-    /*
-     * get branch list of company
-     */
     public function getBranch(Request $request)
     {
         $company_id = $request->input('company_id');
@@ -649,10 +607,6 @@ class VehicleController extends Controller
         }
 
     }
-
-    /*
-     * get ryde list of models
-     */
     public function getRyde(Request $request)
     {
         $brand_id = $request->brand_id;
@@ -678,9 +632,6 @@ class VehicleController extends Controller
         }
     }
 
-    /*
-     * show Vehicle Details
-     */
     public function vehicleDetails($id)
     {
         $vehicle = Vehicle::where('id', $id)
@@ -766,10 +717,6 @@ class VehicleController extends Controller
 
         return response()->json(['success' => true, 'data' => $array]);
     }
-
-    /*
-     * Get Models List of specific year color and brand
-     */
     public function getModel(Request $request)
     {
         $brand_id = $request->input('brand_id');

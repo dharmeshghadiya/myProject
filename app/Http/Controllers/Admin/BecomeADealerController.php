@@ -28,9 +28,9 @@ class BecomeADealerController extends Controller
                     $status = '';
                     if(!empty($becomeADealers->reason)){
 
-                         $status = '<span  class=" badge badge-danger">' . config('languageString.rejected') . '</span>';
-                     }
-                     return $status;
+                        $status = '<span  class=" badge badge-danger">' . config('languageString.rejected') . '</span>';
+                    }
+                    return $status;
 
                 })
                 ->addColumn('action', function($becomeADealers){
@@ -43,67 +43,10 @@ class BecomeADealerController extends Controller
 
                     return '<div class="btn-icon-list">' . $view_detail_button . ' ' . $accept_button . ' ' . $reject_button . ' ' . $delete_button . '</div>';
                 })
-                ->rawColumns(['action','status'])
+                ->rawColumns(['action', 'status'])
                 ->make(true);
         }
         return view('admin.becomeADealer.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * Add Body Page
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\JsonResponse
-     * Add Body Details
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * Edit Body Page
-     */
-    public function edit($id)
-    {
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
@@ -126,45 +69,45 @@ class BecomeADealerController extends Controller
     {
         $become = BecomeADealer::where('id', $id)->first();
 
-       if($status == 'Accept'){
-        $insert_id = User::create([
-                    'name'         => $become->name,
-                    'email'        => $become->email,
-                    'country_code' => $become->country_code,
-                    'mobile_no'    => $become->mobile_number,
-                    'panel_mode'   => 1,
-                    'locale'       => 'en',
-                    'user_type'    => 'company',
-                    'status'       => 'Active',
-                    'password'     => $become->password,
-                ]);
-        $company =  Company::create([
+        if($status == 'Accept'){
+            $insert_id = User::create([
+                'name'         => $become->name,
+                'email'        => $become->email,
+                'country_code' => $become->country_code,
+                'mobile_no'    => $become->mobile_number,
+                'panel_mode'   => 1,
+                'locale'       => 'en',
+                'user_type'    => 'company',
+                'status'       => 'Active',
+                'password'     => $become->password,
+            ]);
+            $company = Company::create([
 
-                'user_id' => $insert_id->id,
-                'name' => $become->business_name,
-                'contact_name' => $become->name,
-                'email' => $become->email,
-                'country_code' => '+'.$become->country_code,
-                'mobile_no' => $become->mobile_number,
-                'iban' => $become->bank_iban,
-                'license_number' => $become->license_number,
-                'business_number' => $become->business_number,
-                'security_deposit' => $become->security_deposite,
-                'license_expiry_date' => $become->license_expiry_date,
-                'bank_name' => $become->bank_name,
-                'bank_address' => $become->bank_address,
-                'bank_contact_number' => $become->bank_contact_number,
-                'beneficiary_name' => $become->beneficiary_name,
-                'bank_code' => $become->bank_code,
-                'country_id' => 12,
+                'user_id'               => $insert_id->id,
+                'name'                  => $become->business_name,
+                'contact_name'          => $become->name,
+                'email'                 => $become->email,
+                'country_code'          => '+' . $become->country_code,
+                'mobile_no'             => $become->mobile_number,
+                'iban'                  => $become->bank_iban,
+                'license_number'        => $become->license_number,
+                'business_number'       => $become->business_number,
+                'security_deposit'      => $become->security_deposite,
+                'license_expiry_date'   => $become->license_expiry_date,
+                'bank_name'             => $become->bank_name,
+                'bank_address'          => $become->bank_address,
+                'bank_contact_number'   => $become->bank_contact_number,
+                'beneficiary_name'      => $become->beneficiary_name,
+                'bank_code'             => $become->bank_code,
+                'country_id'            => 12,
                 'commission_percentage' => 20,
-                'dealer_logo'=>$become->logo,
-                'trade_license_image'=>$become->trade_license_doc,
+                'dealer_logo'           => $become->logo,
+                'trade_license_image'   => $become->trade_license_doc,
 
-                ]);
+            ]);
 
-                BecomeADealer::where('id', $id)->delete();
-        }else{
+            BecomeADealer::where('id', $id)->delete();
+        } else{
             BecomeADealer::where('id', $id)->update(['reason' => $status]);
         }
 

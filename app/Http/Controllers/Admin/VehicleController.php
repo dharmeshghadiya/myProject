@@ -23,6 +23,8 @@ use App\Models\Ryde;
 use App\Models\VehicleExtra;
 use App\Models\VehicleFeature;
 use App\Models\VehicleNotAvailable;
+use Illuminate\Contracts\Foundation\App\Modelslication;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -33,21 +35,18 @@ class VehicleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Modelslication|Factory|\Illuminate\View\View
      */
     public function index(Request $request, $id = '')
     {
 
         if($request->ajax()){
-            //DB::enableQueryLog();
             $vehicles = Vehicle::where('company_address_id', $request->branch_id)
                 ->with([
                     'ryde' => function($query){
                         $query->with('brand', 'modelYear', 'color');
                     },
                 ])->get();
-            //dd(DB::getQueryLog());
-            // dd($vehicles);
             return Datatables::of($vehicles)
                 ->addColumn('make', function($vehicles){
                     return $vehicles->ryde->brand->name;
@@ -103,7 +102,7 @@ class VehicleController extends Controller
      * Show the form for creating a new resource.
      *
      * @param $branch_id
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Modelslication|Factory|\Illuminate\View\View
      */
     public function create($company_id, $branch_id)
     {
@@ -356,24 +355,12 @@ class VehicleController extends Controller
 
         }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param $branch_id
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Modelslication|Factory|\Illuminate\View\View
      */
     public function edit($branch_id, $id)
     {
@@ -428,18 +415,6 @@ class VehicleController extends Controller
         } else{
             abort(404);
         }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

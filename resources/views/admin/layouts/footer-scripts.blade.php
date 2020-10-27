@@ -25,12 +25,12 @@
 <script src="{{URL::asset('assets/plugins/sidebar/sidebar-custom.js')}}"></script>
 <!-- Eva-icons js -->
 <script src="{{URL::asset('assets/js/eva-icons.min.js')}}"></script>
-<script src="{{URL::asset('assets/plugins/intl-tel-input/js/intlTelInput.min.js')}}"></script>
 @yield('js')
 <!-- Sticky js -->
 <script src="{{URL::asset('assets/js/sticky.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/select2/js/select2.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/sumoselect/jquery.sumoselect.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/multiselect/jquery.multi-select.js')}}"></script>
 <!-- custom js -->
 <script src="{{URL::asset('assets/plugins/fileuploads/js/fileupload.js')}}"></script>
 <script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
@@ -69,6 +69,6 @@
 
 <script src="{{URL::asset('assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js')}}"></script>
 
-<script src="{{URL::asset('assets/js/form-elements.js')}}"></script>
+{{--<script src="{{URL::asset('assets/js/form-elements.js')}}"></script>--}}
 
 

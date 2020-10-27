@@ -29,9 +29,7 @@ class BookingController extends Controller
     {
 
         if($request->ajax()){
-            //DB::enableQueryLog();
             $bookings = Booking::where('company_id', Session('company_id'))->with('company', 'companyAddress', 'user')->get();
-            //dd(DB::getQueryLog());
             return Datatables::of($bookings)
                 ->addColumn('id', function($bookings){
                     return $bookings->transaction_id;
@@ -83,62 +81,6 @@ class BookingController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($id)
-    {
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function destroy($id)
-    {
-
-    }
-
-
     public function BookingDetails($id)
     {
         $value_id = $id;
@@ -169,8 +111,6 @@ class BookingController extends Controller
             $array['globalModalDetails'] .= '<td>' . $booking->transaction_id . '</td>';
             $array['globalModalDetails'] .= '</tr>';
             $array['globalModalDetails'] .= '</table>';
-
-
             $array['globalModalDetails'] .= '<table class="table table-bordered">';
             $array['globalModalDetails'] .= '<thead class="thead-light"><tr><th colspan="6" class="text-center">' . config('languageString.ryde_details') . ': ' . $booking->vehicles->ryde->brand->name . ' | ' . $booking->vehicles->ryde->name . ' | ' . $booking->vehicles->ryde->modelYear->name . '</th></tr></thead>';
             $array['globalModalDetails'] .= '<thead class="thead-dark"><tr><th>' . config('languageString.color') . '</th><th>' . config('languageString.hourly_amount') . '
@@ -183,8 +123,6 @@ class BookingController extends Controller
             $array['globalModalDetails'] .= '<td>$' . $booking->vehicles->monthly_amount . '</td>';
             $array['globalModalDetails'] .= '</tr>';
             $array['globalModalDetails'] .= '</table>';
-
-            // further booking details
             $array['globalModalDetails'] .= '<table class="table table-bordered">';
             $array['globalModalDetails'] .= '<thead class="thead-light"><tr><th colspan="4" class="text-center">' . config('languageString.booking_details') . '</th></tr></thead>';
             $array['globalModalDetails'] .= '<thead class="thead-dark"><tr><th>' . config('languageString.pick_up_location') . '</th><th>' . config('languageString.pick_up_latitude') . '</th><th>' . config('languageString.pick_up_longitude') . '</th></tr></thead>';
@@ -286,7 +224,6 @@ class BookingController extends Controller
 
         $start_date = Carbon::parse($pick_up_date)->format("Y-m-d H:i:s");
         $end_date = Carbon::parse($return_date)->format("Y-m-d H:i:s");
-        // dd($start_date);
 
         $no_of_days = Carbon::parse($pick_up_date)->diffInDays($end_date);
         $no_of_hour = Carbon::parse($pick_up_date)->diffInHours($end_date);
@@ -311,7 +248,6 @@ class BookingController extends Controller
                 if($response == 0 && $not_availability_response == 0){
 
                     $name = $vehicle->ryde->brand->name . ' ' . $vehicle->trim . ' ' . $vehicle->ryde->modelYear->name;
-                    //echo '<option value="' . $vehicle->id . '">' . $name . '(' . $vehicle->hourly_amount . ')' . '</option>';
                     $vehicleArray[$i]['vehicle_id'] = $vehicle->id;
                     $vehicleArray[$i]['company_id'] = $vehicle->company_id;
                     $vehicleArray[$i]['country_id'] = $vehicle->companyAddress->country_id;
@@ -349,7 +285,6 @@ class BookingController extends Controller
 
     public function inRideBetween($start_date, $end_date, $vehicle_id)
     {
-        // DB::enableQueryLog();
         return Booking::where(function($query) use ($start_date, $end_date){
             $query->whereBetween('start_date', [$start_date, $end_date]);
             $query->OrWhereBetween('end_date', [$start_date, $end_date]);
@@ -358,7 +293,6 @@ class BookingController extends Controller
             ->where('status', '!=', 'Review')
             ->where('status', '!=', 'Cancelled')
             ->where('status', '!=', 'Completed')->count();
-        // dd(DB::getQueryLog());
 
     }
 

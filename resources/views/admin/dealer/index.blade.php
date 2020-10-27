@@ -21,13 +21,13 @@
         <div class="card-body p-2">
             <div class="input-group">
                 <select id="country_id" name="country_id" class="form-control select2">
-                    <option value="">{{ config('languageString.please_select_country') }}</option>
+                    <option value="">{{ config('languageString.select_country') }}</option>
                     @foreach($countries as $country)
                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                     @endforeach
 
                 </select> <span
-                    class="input-group-append"> <button class="btn btn-secondary" id="dealer-search" type="button">{{ config('languageString.search') }}</button> </span>
+                    class="input-group-append"> <button class="btn btn-secondary" id="dealer-search" type="button">{{ config('languageString.filter') }}</button> </span>
             </div>
         </div>
     </div>

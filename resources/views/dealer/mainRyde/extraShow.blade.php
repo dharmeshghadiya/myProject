@@ -49,18 +49,8 @@
                             @endif
 
 @section('js')
-    
+
     <script>
-        $('.extra_switch').on('click', function () {
-        let toggle_id = $(this).attr('id');
-        $(this).toggleClass('on');
-        if ($(this).hasClass('on')) {
-            $("#extra_id_" + toggle_id).attr('readonly', false).removeClass('bg-light').val(1);
-            $("#extra_price_" + toggle_id).attr('readonly', false).removeClass('bg-light').val(0);
-        } else {
-            $("#extra_id_" + toggle_id).attr('readonly', true).addClass('bg-light').val(2);
-            $("#extra_price_" + toggle_id).attr('readonly', true).addClass('bg-light').val(0);
-        }
-    })
+
     </script>
 @endsection

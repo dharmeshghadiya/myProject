@@ -43,9 +43,20 @@
                                 <div class="form-group">
                                     <label for="mobile_no">{{ config('languageString.mobile_no') }}<span
                                             class="error">*</span></label><br>
-                                    <input type="text" class="form-control integer"
-                                           name="mobile_no" placeholder="{{ config('languageString.mobile_no') }}"
-                                           id="mobile_no" required/>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <select class="form-control " name="country_code" required>
+                                                <option value="">Country Code</option>
+                                                @foreach($countries as $country)
+                                                    <option
+                                                        value="{{ $country->code }}"> {{ $country->name.'  +'.$country->code }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <input type="text" class="form-control integer"
+                                               name="mobile_no" placeholder="{{ config('languageString.mobile_no') }}"
+                                               id="mobile_no" required/>
+                                    </div>
                                     <div class="help-block with-errors error"></div>
                                 </div>
                             </div>
@@ -95,7 +106,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.license_expiry_date') }}<span
+                                    <label for="license_expiry_date">{{ config('languageString.license_expiry_date') }}
+                                        <span
                                             class="error">*</span></label>
                                     <input class="form-control fc-datepicker" name="license_expiry_date"
                                            id="license_expiry_date" placeholder="MM/DD/YYYY" type="text" required>
@@ -108,7 +120,7 @@
                                             class="error">*</span></label>
                                     <select id="status" name="status" class="form-control">
                                         <option value="Active">{{ config('languageString.active') }}</option>
-                                        <option value="InActive">{{ config('languageString.InActive') }}</option>
+                                        <option value="InActive">{{ config('languageString.in_active') }}</option>
 
                                     </select>
                                     <div class="help-block with-errors error"></div>
@@ -119,7 +131,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.bank_name') }}<span
+                                    <label for="bank_name">{{ config('languageString.bank_name') }}<span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="bank_name" placeholder="{{ config('languageString.bank_name') }}"
@@ -129,7 +141,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.bank_address') }}<span
+                                    <label for="bank_address">{{ config('languageString.bank_address') }}<span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="bank_address" placeholder="{{ config('languageString.bank_address') }}"
@@ -139,7 +151,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.bank_contact_number') }}<span
+                                    <label for="bank_contact_number">{{ config('languageString.bank_contact_number') }}
+                                        <span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="bank_contact_number"
@@ -150,7 +163,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.beneficiary_name') }}<span
+                                    <label for="beneficiary_name">{{ config('languageString.beneficiary_name') }}<span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="beneficiary_name"
@@ -161,7 +174,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.bank_code') }}<span
+                                    <label for="bank_code">{{ config('languageString.bank_code') }}<span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="bank_code" placeholder="{{ config('languageString.bank_code') }}"
@@ -171,7 +184,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.bank_iban') }}<span
+                                    <label for="bank_iban">{{ config('languageString.bank_iban') }}<span
                                             class="error">*</span></label>
                                     <input type="text" class="form-control"
                                            name="iban" placeholder="{{ config('languageString.bank_iban') }}"
@@ -182,7 +195,7 @@
 
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="image">{{ config('languageString.dealer_logo') }}<span
+                                    <label for="dealer_logo">{{ config('languageString.dealer_logo') }}<span
                                             class="error">*</span></label>
                                     <input type="file" class="form-control dropify"
                                            name="dealer_logo"
@@ -262,7 +275,8 @@
                                                             name="extra[]" class="form-control form-control-sm"
                                                             required>
                                                         <option value="1">{{ config('languageString.daily') }}</option>
-                                                        <option value="0">{{ config('languageString.one_time') }}</option>
+                                                        <option
+                                                            value="0">{{ config('languageString.one_time') }}</option>
                                                         <option
                                                             value="2">{{ config('languageString.not_require') }}</option>
                                                     </select>
@@ -283,7 +297,6 @@
                                            class="btn btn-secondary">{{ config('languageString.cancel') }}</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </form>

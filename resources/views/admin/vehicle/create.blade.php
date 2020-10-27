@@ -319,7 +319,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="image">{{ config('languageString.options') }}<span class="error">*</span></label>
-                                    <select id="option" name="option[]" class="form-control" multiple>
+                                    <select id="option" name="option[]" class="form-control "  multiple>
                                         @foreach($options as $option)
                                             <option value="{{ $option->id }}">{{ $option->name }}</option>
                                         @endforeach
@@ -333,7 +333,7 @@
                                 <div class="form-group">
                                     <label for="image">{{ config('languageString.features') }} <span
                                             class="error">*</span></label>
-                                    <select id="featured" name="featured[]" class="form-control" multiple>
+                                    <select id="featured" name="featured[]" class="form-control"  multiple>
                                         @foreach($features as $feature)
                                             <option value="{{ $feature->id }}">{{ $feature->name }}</option>
                                         @endforeach

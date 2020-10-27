@@ -7,7 +7,7 @@
         <div class="my-auto">
             <div class="d-flex">
                 <h2 class="content-title mb-0 my-auto">{{ config('languageString.add_model') }}</h2>
-            </div>
+                </div>
         </div>
     </div>
     <!-- breadcrumb -->

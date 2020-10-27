@@ -40,15 +40,12 @@ class BranchController extends Controller
     {
 
         if($request->ajax()){
-            //DB::enableQueryLog();
             $company_addresses = CompanyAddress::where('company_id', Session('company_id'))->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($company_addresses)
                 ->addColumn('action', function($company_addresses){
                     $edit_button = '<a href="' . route('dealer::branch.edit', [$company_addresses->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="Edit"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
                     $delete_button = '<button data-id="' . $company_addresses->id . '" class="delete-single btn btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="bx bx-trash font-size-16 align-middle"></i></button>';
                     $ryde_instance_button = '<a href="' . route('dealer::ryde', [$company_addresses->id]) . '" class="status-change btn btn-icon btn-secondary" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="Ryde"><i class="bx bx-car font-size-16 align-middle"></i></a>';
-                    //  $extra_button = '<a href="' . route('dealer::branchExtra', [$company_addresses->id]) . '" class="btn btn-icon btn-warning" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="Extra"><i class="bx bxs-extension font-size-16 align-middle"></i></a>';
                     return '<div class="btn-icon-list">' . $edit_button . ' ' . $delete_button . ' ' . $ryde_instance_button . '</div>';
                 })
                 ->addColumn('service_distance', function($company_addresses){
@@ -182,8 +179,6 @@ class BranchController extends Controller
 
             $extras = $request->input('extra');
             $extra_ids = $request->input('extra_ids');
-
-            //BranchExtra::where('company_address_id', $company_address_id->id)->delete();
 
             if($extras != NULL){
                 foreach($extras as $key => $extra){
@@ -346,17 +341,6 @@ class BranchController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
@@ -396,19 +380,6 @@ class BranchController extends Controller
             abort(404);
         }
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      *

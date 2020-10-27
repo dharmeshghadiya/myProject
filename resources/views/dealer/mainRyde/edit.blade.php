@@ -502,7 +502,7 @@
 
                     <div class="modal-footer">
 
-                        <button type="submit" class="btn ripple btn-primary">Submit</button>
+                        <button type="submit" class="btn ripple btn-success">Submit</button>
                         <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
                     </div>
                     </form>

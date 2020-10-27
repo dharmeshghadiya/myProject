@@ -122,9 +122,6 @@ class UserController extends Controller
         $user->is_verify = 0;
         $user->save();
 
-
-        // $token = JWTAuth::fromUser($user);
-
         $array = [
             'name'      => $request->input('name'),
             'actionUrl' => route('verify-email', [$verify_token]),
@@ -135,15 +132,6 @@ class UserController extends Controller
             'success' => true,
             'message' => Config('languageString.please_check_your_mail_and_verify_your_email_address'),
         ], 200);
-
-        /*return response()->json([
-            'success'      => true,
-            'name'         => $user->name,
-            'email'        => $user->email,
-            'country_code' => $user->country_code,
-            'mobile_no'    => $user->mobile_no,
-            'token'        => $token,
-        ], 200);*/
     }
 
     public function getProfile(Request $request)
@@ -227,7 +215,6 @@ class UserController extends Controller
             ];
             Mail::to($request->input('email'))->send(new ResetPasswordEmail($array));
 
-            //$user->sendPasswordResetNotification($token);
 
             return response()->json([
                 'success' => true,

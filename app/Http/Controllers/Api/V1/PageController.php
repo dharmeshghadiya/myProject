@@ -10,7 +10,6 @@ class PageController extends Controller
 {
     public function index($id)
     {
-
         $page = PageResource::collection(Page::where('id',$id)->get());
 
         if (count($page) > 0) {

@@ -85,71 +85,6 @@ class BookingController extends Controller
         return view('admin.booking.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function create()
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($id)
-    {
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function destroy($id)
-    {
-
-    }
-
-
     public function BookingDetails($id)
     {
         $value_id = $id;
@@ -291,8 +226,6 @@ class BookingController extends Controller
             'status' => $status,
         ]);
 
-        //TODO:Booking Mail
-
         Commission::where('booking_id', $value_id)->delete();
 
         return response()->json([
@@ -310,8 +243,6 @@ class BookingController extends Controller
         if($validator->fails()){
             return response()->json(['success' => false, 'message' => $validator->errors()->first()]);
         }
-        //DB::enableQueryLog();
-
         $is_affected = Booking::where('id', $request->input('booking_id'))->update([
             'adjustment' => $request->input('adjustment'),
         ]);
@@ -325,7 +256,6 @@ class BookingController extends Controller
                 ]);
             }
         }
-        // dd(DB::getQueryLog());
         return response()->json(['success' => true, 'message' => config('languageString.adjustment_successfully'),]);
     }
 

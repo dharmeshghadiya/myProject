@@ -18,9 +18,7 @@ class AbilityController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
             $abilities = Ability::get();
-            // dd(DB::getQueryLog());
             return Datatables::of($abilities)->make(true);
         }
         return view('admin.abilities.index');
@@ -60,16 +58,6 @@ class AbilityController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

@@ -26,7 +26,8 @@
 <link href="{{URL::asset('assets/plugins/datatable/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/plugins/datatable/css/responsive.dataTables.min.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/plugins/jqvmap/jqvmap.min.css')}}" rel="stylesheet">
-<link href="{{URL::asset('assets/plugins/intl-tel-input/css/intlTelInput.min.css')}}" rel="stylesheet">
+<link href="{{URL::asset('assets/plugins/multiselect/multi-select.css')}}" rel="stylesheet">
+
 <link href="{{URL::asset('assets/css/style-datepicker.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css')}}" rel="stylesheet">
 <!-- style css -->

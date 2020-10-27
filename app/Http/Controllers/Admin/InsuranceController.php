@@ -27,11 +27,9 @@ class InsuranceController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
             $insurances = Insurance::listsTranslations('name')
                 ->select('insurances.id')
                 ->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($insurances)
                 ->addColumn('action', function ($insurances) {
                     $edit_button = '<a href="' . route('admin::insurance.edit', [$insurances->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -97,16 +95,6 @@ class InsuranceController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -123,18 +111,6 @@ class InsuranceController extends Controller
         } else {
             abort(404);
         }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

@@ -18,12 +18,9 @@ class PaymentController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            //DB::enableQueryLog();
             $payment = Commission::where('company_id', Session('company_id'))
                 ->where('booking_id',NULL)
                 ->get();
-            // dd(DB::getQueryLog());
-
             return Datatables::of($payment)
                 ->addIndexColumn()
                 ->addColumn('date', function($payment){

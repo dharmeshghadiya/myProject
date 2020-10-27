@@ -22,12 +22,10 @@ class BrandModelController extends Controller
     {
 
         if ($request->ajax()) {
-            //   DB::enableQueryLog();
             $models = BrandModel::listsTranslations('name')
                 ->with('brand')
                 ->select('brand_models.id', 'brand_models.brand_id', 'brand_models.image')
                 ->get();
-            //    dd(DB::getQueryLog());
             return Datatables::of($models)
                 ->addColumn('action', function ($models) {
                     $edit_button = '<a href="' . route('admin::model.edit', [$models->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -142,17 +140,6 @@ class BrandModelController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
@@ -175,18 +162,6 @@ class BrandModelController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param int $id
@@ -202,9 +177,7 @@ class BrandModelController extends Controller
     public function getModel(Request $request)
     {
         $brand_id = $request->input('brand_id');
-
         $brand_models = BrandModel::where('brand_id', $brand_id)->get();
-
         if (count($brand_models) > 0) {
             echo "<option value=''>Please Select model</option>";
             foreach ($brand_models as $brand_model) {

@@ -9,9 +9,8 @@ class PassGenrate extends Controller
 {
     public function index()
     {
-      //  dd(phpinfo());
 
-        $pass_identifier = '11';  // This, if set, it would allow for retrieval later on of the created Pass
+        $pass_identifier = '11';
 
         $pass = new PassGenerator($pass_identifier);
 
@@ -114,10 +113,6 @@ class PassGenrate extends Controller
 
         $pass->setPassDefinition($pass_definition);
 
-        // Definitions can also be set from a JSON string
-        // $pass->setPassDefinition(file_get_contents('/path/to/pass.json));
-
-        // Add assets to the PKPass package
         $pass->addAsset(base_path('assets/img/brand/logo-white.png'));
         $pass->addAsset(base_path('assets/img/brand/logo-white.png'));
         $pass->addAsset(base_path('assets/img/brand/logo-white.png'));

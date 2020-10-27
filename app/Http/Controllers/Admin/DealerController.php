@@ -115,10 +115,12 @@ class DealerController extends Controller
             'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
         ];
         $global_extras = GlobalExtra::all();
+        $countries = Country::all();
         return view('admin.dealer.create', [
             'languages'        => $languages,
             'service_distance' => $setting->meta_value,
             'weeks'            => $weeks,
+            'countries'        => $countries,
             'global_extras'    => $global_extras,
         ]);
     }
@@ -413,18 +415,6 @@ class DealerController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param int $id
@@ -441,12 +431,9 @@ class DealerController extends Controller
 
     /*
      * Add Dealer Branch Page
-     * .
      */
     public function addBranch($id, $company_id)
     {
-        // DB::enableQueryLog();
-
         $is_user = User::with([
             'companies' => function($query) use ($id, $company_id){
                 $query->where('user_id', $id);
@@ -570,8 +557,6 @@ class DealerController extends Controller
 
             $extras = $request->input('extra');
             $extra_ids = $request->input('extra_ids');
-
-            //BranchExtra::where('company_address_id', $company_address_id->id)->delete();
 
             if($extras != NULL){
                 foreach($extras as $key => $extra){

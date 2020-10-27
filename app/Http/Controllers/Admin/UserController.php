@@ -37,8 +37,6 @@ class UserController extends Controller
         if($request->ajax()){
 
             $users = User::where('user_type', 'user')->get();
-
-            // dd(DB::getQueryLog());
             return Datatables::of($users)
                 ->addColumn('status', function($users){
                     if($users->status == 'Active'){
@@ -52,8 +50,6 @@ class UserController extends Controller
 
                     $edit_button = '<a href="' . route('admin::users.edit', [$users->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
                     $delete_button = '<button data-id="' . $users->id . '" class="delete-single btn btn-danger btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.delete') . '""><i class="bx bx-trash font-size-16 align-middle"></i></button>';
-                    //$details_btn = '<a href="' . route('admin::dealer.show', [$users->id]) . '" class="dealer-details btn btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.view_details') . '""><i class="bx bx-bullseye font-size-16 align-middle"></i></a>';
-
                     $status = 'Active';
                     $translate_status = config('languageString.active');
                     if($users->status == 'Active'){
@@ -112,18 +108,6 @@ class UserController extends Controller
         }
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -140,19 +124,6 @@ class UserController extends Controller
             abort(404);
         }
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      *

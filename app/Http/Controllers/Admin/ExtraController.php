@@ -20,11 +20,9 @@ class ExtraController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            //DB::enableQueryLog();
             $extras = Extra::listsTranslations('name')
                 ->select('extras.id')
                 ->get();
-            // dd(DB::getQueryLog());
             return Datatables::of($extras)
                 ->addColumn('action', function ($extras) {
                     $edit_button = '<a href="' . route('admin::extra.edit', [$extras->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -92,17 +90,6 @@ class ExtraController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
@@ -117,18 +104,6 @@ class ExtraController extends Controller
         } else {
             abort(404);
         }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

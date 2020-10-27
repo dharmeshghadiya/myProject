@@ -81,11 +81,8 @@ class VehicleController extends Controller
 
 
         $vehicles = $this->getVehicle($filter_array);
-        // dd($vehicles);
         $array = [];
         $i = 0;
-
-        //  dd($vehicles);
 
         foreach($vehicles as $vehicle){
             $response = VehicleAvailableCheckHelper::inRideBetween($filter_array['pick_up_date'], $filter_array['return_date'], $vehicle->id);
@@ -240,8 +237,6 @@ class VehicleController extends Controller
 
     public function show($id)
     {
-        //DB::enableQueryLog();
-
         $response = Vehicle::with([
             'ryde'            => function($query){
                 $query->with('brand', 'modelYear', 'color');
@@ -254,7 +249,6 @@ class VehicleController extends Controller
                 $query->with('extra');
             }, 'companyAddress', 'vehicleFeature', 'companies', 'insurances', 'engine', 'fuel', 'gearbox',
         ])->where('id', $id)->first();
-        // dd(DB::getQueryLog());
         $extra_array = [];
         if($response->vehicleExtra != NULL){
             $i = 0;
@@ -394,7 +388,6 @@ class VehicleController extends Controller
             ], 403);
         }
 
-        //  DB::enableQueryLog();
         $country_data = $this->getCountryId($request->input('country_code'));
 
         $filter_array['category_id'] = $request->input('category_id');
@@ -422,8 +415,6 @@ class VehicleController extends Controller
                 'message' => Config('languageString.service_not_available'),
             ]);
         }
-
-        //  DB::enableQueryLog();
 
         $category_vehicles = CategoryVehicle::with([
             'vehicle' => function($query){
@@ -552,5 +543,4 @@ class VehicleController extends Controller
         return $query->get();
 
     }
-
 }

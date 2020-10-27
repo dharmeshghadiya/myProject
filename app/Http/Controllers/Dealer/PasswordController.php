@@ -33,7 +33,6 @@ class PasswordController extends Controller
             return response()->json(['success' => false, 'message' => trans('adminMessages.password_does_not_match')]);
             }
             elseif (Hash::check($request->input('current_password'), $user->password)) {
-                //$user->password =  bcrypt($request->input('new_password'));
 
                  $update = User::where('id', $id)->update([
                     'password'      => bcrypt($request->input('new_password')),

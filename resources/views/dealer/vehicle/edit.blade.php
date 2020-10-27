@@ -403,7 +403,7 @@
                             <div class="col-12">
                                 <div class="form-group mb-0 mt-3 justify-content-end">
                                     <div>
-                                        <button type="submit" class="btn btn-primary">{{ config('languageString.submit') }}</button>
+                                        <button type="submit" class="btn btn-success">{{ config('languageString.submit') }}</button>
                                         <a href="{{ route('dealer::ryde',[$branch_id]) }}"
                                            class="btn btn-secondary">{{ config('languageString.cancel') }}</a>
                                     </div>
