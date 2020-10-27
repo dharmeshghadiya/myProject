@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Booking;
-use App\Commission;
-use App\Company;
-use App\User;
-use App\Vehicle;
+use App\Models\Booking;
+use App\Models\Commission;
+use App\Models\Company;
+use App\Models\User;
+use App\Models\Vehicle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

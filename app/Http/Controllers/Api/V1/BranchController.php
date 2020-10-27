@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\User;
-use App\Company;
-use App\CompanyAddress;
+
+use App\Models\Company;
+use App\Models\CompanyAddress;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\BranchResource;
-use Illuminate\Support\Str;
-use League\Flysystem\Config;
-use Illuminate\Support\Facades\URL;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 

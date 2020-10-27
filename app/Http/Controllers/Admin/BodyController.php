@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Body;
-use App\BodyTranslation;
-use App\Booking;
-use App\CategoryVehicle;
-use App\Language;
-use App\Ryde;
-use App\RydeInstance;
-use App\Vehicle;
-use App\VehicleExtra;
-use App\VehicleFeature;
-use App\VehicleNotAvailable;
-use App\VehicleOption;
+use App\Models\Body;
+use App\Models\BodyTranslation;
+use App\Models\Booking;
+use App\Models\CategoryVehicle;
+use App\Models\Language;
+use App\Models\Ryde;
+use App\Models\RydeInstance;
+use App\Models\Vehicle;
+use App\Models\VehicleExtra;
+use App\Models\VehicleFeature;
+use App\Models\VehicleNotAvailable;
+use App\Models\VehicleOption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -24,7 +24,7 @@ class BodyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -39,15 +39,15 @@ class BodyController extends Controller
                     $front_image = '';
                     if(!empty($bodies->front_image)){
                       $front_url = asset($bodies->front_image);
-                      $front_image =  "<img src='" . $front_url . "' style='width:100px' />";  
+                      $front_image =  "<img src='" . $front_url . "' style='width:100px' />";
                     }
-                    return $front_image; 
+                    return $front_image;
                 })
             ->addColumn('back_image', function($bodies){
                 $back_image = '';
                 if(!empty($bodies->back_image)){
                  $back_url = asset($bodies->back_image);
-                 $back_image =  "<img src='" . $back_url . "' style='width:100px' />";   
+                 $back_image =  "<img src='" . $back_url . "' style='width:100px' />";
                 }
                 return $back_image;
                 })
@@ -57,7 +57,7 @@ class BodyController extends Controller
                     $right_url = asset($bodies->right_image);
                     $right_image = "<img src='" . $right_url . "' style='width:100px' />";
                 }
-                return $right_image;   
+                return $right_image;
                 })
             ->addColumn('left_image', function($bodies){
                 $left_image = '';
@@ -65,7 +65,7 @@ class BodyController extends Controller
                  $left_url = asset($bodies->left_image);
                  $left_image = "<img src='" . $left_url . "' style='width:100px' />";
                 }
-                return $left_image;   
+                return $left_image;
                 })
                 ->addColumn('action', function($bodies){
                     $edit_button = '<a href="' . route('admin::body.edit', [$bodies->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';
@@ -81,7 +81,7 @@ class BodyController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -195,7 +195,7 @@ class BodyController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\BecomeADealer;
+use App\Models\BecomeADealer;
 use App\Helpers\ImageUploadHelper;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -22,7 +20,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the App\Modelslication dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -102,9 +100,9 @@ class HomeController extends Controller
 
 
                 ]);
-        
+
 
             return response()->json(['success' => true, 'message' => trans('adminMessages.become_a_dealer_created')]);
-        
+
     }
 }

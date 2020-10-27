@@ -2,9 +2,8 @@
 
 namespace App\Helpers;
 
-use App\Booking;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+
 
 
 class BookingStatusHelper

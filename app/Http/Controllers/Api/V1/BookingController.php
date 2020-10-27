@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Company;
-use App\Booking;
-use App\Commission;
-use App\BookingInspection;
-use App\BookingDetails;
-use App\CompanyAddress;
-use App\Http\Resources\ComapnyResource;
-use App\Setting;
+use App\Models\Company;
+use App\Models\Booking;
+use App\Models\Commission;
+use App\Models\BookingInspection;
+use App\Models\BookingDetails;
+use App\Models\CompanyAddress;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;

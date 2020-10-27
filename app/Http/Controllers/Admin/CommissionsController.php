@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use App\Booking;
-use App\Commission;
-use App\Company;
-use App\BookingDetails;
+use App\Models\Booking;
+use App\Models\Commission;
+use App\Models\Company;
+use App\Models\BookingDetails;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 

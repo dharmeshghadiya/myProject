@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\URL;
 
 
 class ResetPasswordController extends Controller

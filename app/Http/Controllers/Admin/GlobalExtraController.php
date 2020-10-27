@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\BranchExtra;
-use App\CompanyAddress;
-use App\DealerExtra;
-use App\GlobalExtra;
-use App\GlobalExtraTranslation;
-use App\Language;
-use App\User;
-use App\Vehicle;
-use App\VehicleExtra;
-use App\VehicleFeature;
+use App\Models\BranchExtra;
+use App\Models\CompanyAddress;
+use App\Models\DealerExtra;
+use App\Models\GlobalExtra;
+use App\Models\GlobalExtraTranslation;
+use App\Models\Language;
+use App\Models\User;
+use App\Models\Vehicle;
+use App\Models\VehicleExtra;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
@@ -22,7 +21,7 @@ class GlobalExtraController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -47,7 +46,7 @@ class GlobalExtraController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -144,7 +143,7 @@ class GlobalExtraController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

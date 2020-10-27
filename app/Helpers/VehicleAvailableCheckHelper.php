@@ -2,10 +2,8 @@
 
 namespace App\Helpers;
 
-use App\Booking;
-use App\VehicleNotAvailable;
-use Illuminate\Http\Request;
-
+use App\Models\Booking;
+use App\Models\VehicleNotAvailable;
 
 class VehicleAvailableCheckHelper
 {

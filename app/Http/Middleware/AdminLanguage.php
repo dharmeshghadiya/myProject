@@ -3,10 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\LanguageString;
+use App\Models\LanguageString;
 use Session;
-use App\Setting;
-use App\EmailString;
+use App\Models\Setting;
+use App\Models\EmailString;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\App;

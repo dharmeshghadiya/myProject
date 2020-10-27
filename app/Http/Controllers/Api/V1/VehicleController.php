@@ -2,33 +2,16 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Announcement;
-use App\CompanyAddress;
-use App\Setting;
-use App\Brand;
-use App\DriverRequirement;
-use App\Body;
-use App\Company;
-use App\Country;
-use App\Vehicle;
-use App\Engine;
-use App\Gearbox;
-use App\Door;
-use App\Fuel;
-use App\Insurance;
-use App\VehicleFeature;
-use App\Ryde;
-use App\CategoryVehicle;
+use App\Models\Announcement;
+use App\Models\CompanyAddress;
+use App\Models\Setting;
+use App\Models\DriverRequirement;
+use App\Models\Country;
+use App\Models\Vehicle;
+use App\Models\CategoryVehicle;
 use App\Helpers\VehicleAvailableCheckHelper;
-use App\Http\Resources\RydeResource;
-use App\Http\Resources\BodyResource;
-use App\Http\Resources\MakeResource;
-use App\Http\Resources\CompanyResource;
-use App\Http\Resources\InsuranceResource;
-use App\Http\Resources\SettingResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 

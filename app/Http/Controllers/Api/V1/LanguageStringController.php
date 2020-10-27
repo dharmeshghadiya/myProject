@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Resources\LanguageStringResource;
 use DB;
-use App\Setting;
-use App\LanguageString;
+use App\Models\Setting;
+use App\Models\LanguageString;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,12 +15,12 @@ class LanguageStringController extends Controller
     {
         $settings = Setting::all();
 
-        $support_contact_no = $whatsapp_no = '';
+        $support_contact_no = $whatsapp= '';
         foreach($settings as $setting){
             if($setting->meta_key == 'support_contact_no'){
                 $support_contact_no = $setting->meta_value;
-            } else if($setting->meta_key == 'whatsapp_no'){
-                $whatsapp_no = $setting->meta_value;
+            } else if($setting->meta_key == 'whatsApp\Models_no'){
+                $whatsapp = $setting->meta_value;
             }
         }
         // DB::enableQueryLog();
@@ -38,14 +38,14 @@ class LanguageStringController extends Controller
                 'success'            => true,
                 'data'               => $Language_string_screen,
                 'support_contact_no' => $support_contact_no,
-                'whatsapp_no'        => $whatsapp_no,
+                'whatsapp'        => $whatsapp
             ];
         } else{
             $response = [
                 'success'            => false,
                 'message'            => Config('languageString.language_string_not_found'),
                 'support_contact_no' => $support_contact_no,
-                'whatsapp_no'        => $whatsapp_no,
+                'whatsapp'        => $whatsapp,
             ];
         }
 

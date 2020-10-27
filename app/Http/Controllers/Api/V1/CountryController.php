@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Country;
+use App\Models\Country;
 use App\Http\Resources\CountryResource;
-use App\Setting;
-use Illuminate\Http\Request;
+use App\Models\Setting;
 use App\Http\Controllers\Controller;
 
 class CountryController extends Controller

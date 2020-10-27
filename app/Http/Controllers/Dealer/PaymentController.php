@@ -2,24 +2,10 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Company;
-use App\CompanyAddress;
-use App\Booking;
-use App\Commission;
-use App\BookingDetails;
-use App\Language;
-use App\Setting;
-use App\User;
-use App\UserProfile;
-use App\CountryTranslation;
-use App\Country;
-use App\CountryCode;
+
+use App\Models\Commission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
 class PaymentController extends Controller
@@ -27,7 +13,7 @@ class PaymentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {

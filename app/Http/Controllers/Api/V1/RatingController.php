@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 
-use Rating;
+use App\Models\Rating;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;

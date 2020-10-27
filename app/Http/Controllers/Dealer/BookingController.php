@@ -2,41 +2,19 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Booking;
-use App\BookingDetails;
+use App\Models\Booking;
+use App\Models\BookingDetails;
 use App\Helpers\BookingStatusHelper;
-use App\Body;
-use App\Brand;
-use App\Color;
-use App\BrandModel;
-use App\Country;
-use App\ModelYear;
-use App\Category;
-use App\CategoryVehicle;
-use App\Company;
-use App\CompanyAddress;
-use App\Door;
-use App\Engine;
-use App\Option;
-use App\Fuel;
-use App\Gearbox;
-use App\Insurance;
-use App\Language;
-use App\Ryde;
-use App\RydeFeature;
-use App\RydeInstance;
-use App\Commission;
-use App\VehicleExtra;
-use App\VehicleOption;
-use App\RydeTranslation;
-use App\VehicleNotAvailable;
-use App\User;
-use App\Vehicle;
+use App\Models\Country;
+use App\Models\CompanyAddress;
+use App\Models\Commission;
+use App\Models\VehicleExtra;
+use App\Models\VehicleNotAvailable;
+use App\Models\User;
+use App\Models\Vehicle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -45,7 +23,7 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -94,7 +72,7 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -131,7 +109,7 @@ class BookingController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

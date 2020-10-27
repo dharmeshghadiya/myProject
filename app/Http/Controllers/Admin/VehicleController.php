@@ -3,51 +3,37 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Body;
-use App\Booking;
-use App\BookingDetails;
-use App\BranchExtra;
-use App\Brand;
-use App\BrandModel;
-use App\CategoryVehicle;
-use App\GlobalExtra;
-use App\Option;
-use App\RideExtra;
-use App\RydeInstance;
-use App\ModelYear;
-use App\Company;
-use App\CompanyAddress;
-use App\Door;
-use App\Engine;
-use App\Extra;
-use App\Feature;
-use App\Fuel;
-use App\Gearbox;
-use App\Color;
-use App\Insurance;
-use App\Language;
-use App\VehicleOption;
-use App\Vehicle;
-use App\Ryde;
-use App\VehicleAttribute;
-use App\VehicleExtra;
-use App\VehicleFeature;
-use App\VehicleNotAvailable;
+use App\Models\Booking;
+use App\Models\BranchExtra;
+use App\Models\Brand;
+use App\Models\CategoryVehicle;
+use App\Models\GlobalExtra;
+use App\Models\Option;
+use App\Models\ModelYear;
+use App\Models\CompanyAddress;
+use App\Models\Engine;
+use App\Models\Feature;
+use App\Models\Fuel;
+use App\Models\Gearbox;
+use App\Models\Color;
+use App\Models\Insurance;
+use App\Models\VehicleOption;
+use App\Models\Vehicle;
+use App\Models\Ryde;
+use App\Models\VehicleExtra;
+use App\Models\VehicleFeature;
+use App\Models\VehicleNotAvailable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
-use function foo\func;
 
 class VehicleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request, $id = '')
     {
@@ -102,7 +88,7 @@ class VehicleController extends Controller
                         $vehicle_not_available = '<a href="' . route('dealer::vehicleNotAvailable', [$vehicles->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('languageString.ryde_not_availability') . '"><i class="bx bx-error-circle"></i></a>';
                     }
 
-                    return $edit_button . ' ' . $delete_button . ' ' . $view_detail_button .' ' . $status_button . ' ' . $vehicle_not_available;
+                    return $edit_button . ' ' . $delete_button . ' ' . $view_detail_button . ' ' . $status_button . ' ' . $vehicle_not_available;
                 })
                 ->rawColumns(['action', 'status', 'vehicle_not_available'])
                 ->make(true);
@@ -117,7 +103,7 @@ class VehicleController extends Controller
      * Show the form for creating a new resource.
      *
      * @param $branch_id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create($company_id, $branch_id)
     {
@@ -387,7 +373,7 @@ class VehicleController extends Controller
      *
      * @param $branch_id
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($branch_id, $id)
     {

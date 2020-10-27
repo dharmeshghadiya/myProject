@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Category;
-use App\Vehicle;
-use App\Company;
-use App\CompanyAddress;
-use App\CategoryVehicle;
+use App\Models\Category;
+use App\Models\CompanyAddress;
+use App\Models\CategoryVehicle;
 use App\Helpers\VehicleAvailableCheckHelper;
-use App\Country;
-use App\Http\Resources\CategoryResource;
-use App\Setting;
+use App\Models\Country;
+use App\Models\Setting;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

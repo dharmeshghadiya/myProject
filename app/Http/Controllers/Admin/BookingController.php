@@ -2,36 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Booking;
-use App\BookingDetails;
-use App\Body;
-use App\Brand;
-use App\Color;
-use App\BrandModel;
-use App\ModelYear;
-use App\Category;
-use App\CategoryVehicle;
-use App\Company;
-use App\CompanyAddress;
-use App\Door;
-use App\Engine;
-use App\Option;
-use App\Fuel;
-use App\Gearbox;
-use App\Insurance;
-use App\Language;
-use App\Ryde;
-use App\RydeFeature;
-use App\RydeInstance;
-use App\Commission;
-use App\RydeTranslation;
-use App\User;
-use App\Vehicle;
+use App\Models\Booking;
+use App\Models\BookingDetails;
+use App\Models\Commission;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -40,7 +16,7 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -98,8 +74,8 @@ class BookingController extends Controller
                     $view_detail_button = '<button data-id="' . $bookings->id . '" id="booking-details_' . $bookings->id . '" class="booking-details btn btn-icon btn-secondary" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.view_details') . '"><i class="bx bx-bullseye font-size-16 align-middle"></i></button>';
                     $action_button = '';
                     if($bookings->status == 'Review'){
-                        $action_button = '<button data-id="' . $bookings->id . '" data-status="Cancelled" class="cancel-approved btn btn-icon btn-info" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.approved') . '"><i class="bx bx-message-square-check font-size-16 align-middle"></i></button>';
-                        $action_button .= '<button data-id="' . $bookings->id . '" data-status="Rejected" class="cancel-approved btn btn-icon btn-danger" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.rejected') . '"><i class="bx bx-message-square-x font-size-16 align-middle"></i></button>';
+                        $action_button = '<button data-id="' . $bookings->id . '" data-status="Cancelled" class="cancel-App\Modelsroved btn btn-icon btn-info" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.App\Modelsroved') . '"><i class="bx bx-message-square-check font-size-16 align-middle"></i></button>';
+                        $action_button .= '<button data-id="' . $bookings->id . '" data-status="Rejected" class="cancel-App\Modelsroved btn btn-icon btn-danger" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.rejected') . '"><i class="bx bx-message-square-x font-size-16 align-middle"></i></button>';
                     }
                     return '<div class="btn-icon-list">' . $view_detail_button . ' ' . $action_button . '</div>';
                 })
@@ -112,7 +88,7 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -144,7 +120,7 @@ class BookingController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

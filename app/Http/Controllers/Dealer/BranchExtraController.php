@@ -3,21 +3,17 @@
 namespace App\Http\Controllers\Dealer;
 
 
-use App\BranchExtra;
-use App\DealerExtra;
-use App\GlobalExtra;
-use App\Language;
+use App\Models\BranchExtra;
+use App\Models\GlobalExtra;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Yajra\DataTables\Facades\DataTables;
 
 class BranchExtraController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index($company_address_id)
     {

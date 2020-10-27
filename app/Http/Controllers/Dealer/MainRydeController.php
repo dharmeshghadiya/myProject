@@ -2,51 +2,40 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Body;
-use App\Booking;
-use App\BranchExtra;
-use App\Brand;
-use App\ReportModel;
-use App\BrandModel;
-use App\CategoryVehicle;
-use App\GlobalExtra;
-use App\Option;
-use App\RydeInstance;
-use App\ModelYear;
-use App\Company;
-use App\CompanyAddress;
-use App\Door;
-use App\Engine;
-use App\Extra;
-use App\Feature;
-use App\Fuel;
-use App\Gearbox;
-use App\Color;
-use App\Insurance;
-use App\Language;
-use App\Vehicle;
-use App\Ryde;
-use App\VehicleAttribute;
-use App\VehicleExtra;
-use App\VehicleFeature;
-use App\VehicleNotAvailable;
-use App\VehicleOption;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Booking;
+use App\Models\BranchExtra;
+use App\Models\Brand;
+use App\Models\ReportModel;
+use App\Models\CategoryVehicle;
+use App\Models\GlobalExtra;
+use App\Models\Option;
+use App\Models\ModelYear;
+use App\Models\Company;
+use App\Models\CompanyAddress;
+use App\Models\Engine;
+use App\Models\Feature;
+use App\Models\Fuel;
+use App\Models\Gearbox;
+use App\Models\Color;
+use App\Models\Insurance;
+use App\Models\Vehicle;
+use App\Models\Ryde;
+use App\Models\VehicleExtra;
+use App\Models\VehicleFeature;
+use App\Models\VehicleNotAvailable;
+use App\Models\VehicleOption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
-use function foo\func;
+
 
 class MainRydeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * View Ryde Vehicle List
      */
     public function index(Request $request)
@@ -207,7 +196,7 @@ class MainRydeController extends Controller
      * Show the form for creating a new resource.
      *
      * @param $branch_id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Add Ryde Vehicle Page
      */
     public function create()
@@ -529,7 +518,7 @@ class MainRydeController extends Controller
      *
      * @param $branch_id
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Edit Ryde Vehicle Detail Page
      */
     public function edit($id)

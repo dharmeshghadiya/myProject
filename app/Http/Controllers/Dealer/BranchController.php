@@ -2,32 +2,28 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Booking;
-use App\BranchExtra;
-use App\CategoryVehicle;
-use App\Commission;
-use App\Company;
-use App\CompanyAddress;
-use App\CompanyTime;
-use App\DealerExtra;
-use App\GlobalExtra;
-use App\Language;
-use App\Setting;
-use App\User;
-use App\UserProfile;
-use App\CountryTranslation;
-use App\Country;
-use App\CountryCode;
-use App\Vehicle;
-use App\VehicleExtra;
-use App\VehicleFeature;
-use App\VehicleNotAvailable;
-use App\VehicleOption;
+use App\Models\Booking;
+use App\Models\BranchExtra;
+use App\Models\CategoryVehicle;
+use App\Models\Commission;
+use App\Models\Company;
+use App\Models\CompanyAddress;
+use App\Models\CompanyTime;
+use App\Models\DealerExtra;
+use App\Models\GlobalExtra;
+use App\Models\Language;
+use App\Models\Setting;
+use App\Models\User;
+use App\Models\CountryTranslation;
+use App\Models\Country;
+use App\Models\Vehicle;
+use App\Models\VehicleExtra;
+use App\Models\VehicleFeature;
+use App\Models\VehicleNotAvailable;
+use App\Models\VehicleOption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -37,7 +33,7 @@ class BranchController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * View Dealer Branch List
      */
     public function index(Request $request)
@@ -67,7 +63,7 @@ class BranchController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Add Branch Page
      */
     public function create()
@@ -144,7 +140,7 @@ class BranchController extends Controller
             } else{
                 $country_order = Country::max('id');
                 $country = $request->input('country');
-                $code = app('App\CountryCode')->getCountryCode($country_code);
+                $code = App\Models('App\Models\CountryCode')->getCountryCode($country_code);
                 $country_insert_id = Country::create([
                     'code'          => $code,
                     'country_code'  => $country_code,
@@ -249,7 +245,7 @@ class BranchController extends Controller
                 $country_id = $country_list->id;
             } else{
                 $country_order = Country::max('id');
-                $code = app('App\CountryCode')->getCountryCode($country_code);
+                $code = App\Models('App\Models\CountryCode')->getCountryCode($country_code);
                 $country_insert_id = Country::create([
                     'code'          => $code,
                     'country_code'  => $country_code,
@@ -364,7 +360,7 @@ class BranchController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Edit Branch Page
      */
     public function edit($id)

@@ -2,22 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
-use League\Flysystem\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
-use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 use App\Mail\ResetPasswordEmail;
-use App\Mail\VerificationEmail;
-use Illuminate\Support\Facades\URL;
-use Tymon\JWTAuth\Facades\JWTAuth;
-
 
 class ForgetPasswordController extends Controller
 {
@@ -26,7 +17,7 @@ class ForgetPasswordController extends Controller
     {
         return view('auth.passwords.forget');
     }
-    
+
     public function forgotPassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -56,7 +47,7 @@ class ForgetPasswordController extends Controller
 
             //$user->sendPasswordResetNotification($token);
 
-            
+
 
             return redirect()->back()
                 ->with('success_message', Config('languageString.please_check_your_mail'));

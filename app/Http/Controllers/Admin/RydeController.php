@@ -3,35 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Body;
-use App\Booking;
-use App\Brand;
-use App\Color;
-use App\BrandModel;
-use App\ModelYear;
-use App\Category;
-use App\CategoryVehicle;
-use App\Company;
-use App\CompanyAddress;
-use App\Door;
-use App\Engine;
-use App\Fuel;
-use App\Gearbox;
-use App\Insurance;
-use App\Language;
-use App\Ryde;
-use App\RydeFeature;
-use App\RydeInstance;
-use App\RydeTranslation;
-use App\User;
-use App\Vehicle;
-use App\VehicleExtra;
-use App\VehicleFeature;
-use App\VehicleNotAvailable;
-use App\VehicleOption;
+use App\Models\Body;
+use App\Models\Booking;
+use App\Models\Brand;
+use App\Models\Color;
+use App\Models\ModelYear;
+use App\Models\CategoryVehicle;
+use App\Models\Company;
+use App\Models\Door;
+use App\Models\Engine;
+use App\Models\Fuel;
+use App\Models\Gearbox;
+use App\Models\Insurance;
+use App\Models\Language;
+use App\Models\Ryde;
+use App\Models\RydeInstance;
+use App\Models\RydeTranslation;
+use App\Models\Vehicle;
+use App\Models\VehicleExtra;
+use App\Models\VehicleFeature;
+use App\Models\VehicleNotAvailable;
+use App\Models\VehicleOption;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -41,7 +35,7 @@ class RydeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -90,7 +84,7 @@ class RydeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -259,7 +253,7 @@ class RydeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

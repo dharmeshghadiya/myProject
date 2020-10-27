@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\LanguageString;
-use App\LanguageStringTranslation;
-use App\Language;
+use App\Models\LanguageString;
+use App\Models\LanguageStringTranslation;
+use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +15,7 @@ class LanguageStringController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -31,9 +31,9 @@ class LanguageStringController extends Controller
                     return '<div class="btn-icon-list">' . $edit_button . '</div>';
                 })
                  ->addColumn('arname', function ($language_strings) {
-                    
+
                    return $language_strings->translateOrNew('ar')->name;
-                
+
                 })
                 ->addColumn('for', function($language_strings){
                     if($language_strings->app_or_panel == 1){
@@ -148,7 +148,7 @@ class LanguageStringController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

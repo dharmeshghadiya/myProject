@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Booking;
-use App\BranchExtra;
-use App\Commission;
-use App\Company;
-use App\CompanyAddress;
-use App\CompanyTime;
-use App\Country;
-use App\CountryTranslation;
-use App\DealerExtra;
-use App\GlobalExtra;
+use App\Models\Booking;
+use App\Models\BranchExtra;
+use App\Models\Commission;
+use App\Models\Company;
+use App\Models\CompanyAddress;
+use App\Models\CompanyTime;
+use App\Models\Country;
+use App\Models\CountryTranslation;
+use App\Models\DealerExtra;
+use App\Models\GlobalExtra;
 use App\Helpers\ImageUploadHelper;
-use App\Language;
+use App\Models\Language;
 use App\Mail\DealerWelcomeEmail;
-use App\Setting;
-use App\User;
-use App\Vehicle;
+use App\Models\Setting;
+use App\Models\User;
+use App\Models\Vehicle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -32,7 +30,7 @@ class DealerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * View Dealers List
      */
     public function index(Request $request)
@@ -65,8 +63,8 @@ class DealerController extends Controller
                 })
                 ->addColumn('action', function($dealers){
 
-                    $edit_button = '<a href="' . route('admin::dealer.edit', [$dealers->id]) . '" 
-                    class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" 
+                    $edit_button = '<a href="' . route('admin::dealer.edit', [$dealers->id]) . '"
+                    class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top"
                     title="' . config('languageString.edit') . '">
                     <i class="bx bx-pencil font-size-16 align-middle"></i></a>';
 
@@ -76,7 +74,7 @@ class DealerController extends Controller
                       <i class="bx bx-trash font-size-16 align-middle"></i></button>';
 
                     $details_btn = '<a href="' . route('admin::dealer.show', [$dealers->id]) . '"
-                     class="dealer-details btn btn-secondary btn-icon" data-toggle="tooltip" data-placement="top" 
+                     class="dealer-details btn btn-secondary btn-icon" data-toggle="tooltip" data-placement="top"
                      title="' . config('languageString.view_details') . '"">
                      <i class="bx bx-bullseye font-size-16 align-middle"></i></a>';
 
@@ -105,7 +103,7 @@ class DealerController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Add Dealer Page
      */
     public function create()
@@ -316,7 +314,7 @@ class DealerController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Show Dealer Details
      */
     public function show($id)
@@ -382,7 +380,7 @@ class DealerController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * Edit Dealer Page
      */
     public function edit($id)

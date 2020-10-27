@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 
 use App\Helpers\ImageUploadHelper;
-use App\Http\Resources\CategoryResource;
-use App\ReportProblem;
+use App\Models\ReportProblem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;

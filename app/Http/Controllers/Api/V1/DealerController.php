@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\User;
-use App\Device;
+use App\Models\User;
+use App\Models\Device;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

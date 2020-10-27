@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\EmailString;
-use App\EmailStringTranslation;
-use App\Language;
+use App\Models\EmailString;
+use App\Models\EmailStringTranslation;
+use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +15,7 @@ class EmailStringController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -84,7 +84,7 @@ class EmailStringController extends Controller
         } else{
             if($id == NULL){
                 $insert_id = EmailString::create([
-                    
+
                     'template_name'  => $request->input('template_name'),
                     'name_key'     => $request->input('name_key'),
                 ]);
@@ -136,7 +136,7 @@ class EmailStringController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

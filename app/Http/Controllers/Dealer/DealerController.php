@@ -2,32 +2,22 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\Booking;
-use App\Commission;
-use App\Company;
-use App\CompanyAddress;
-use App\CompanyTime;
-use App\Country;
-use App\CountryTranslation;
+
+use App\Models\Company;
+use App\Models\Country;
 use App\Helpers\ImageUploadHelper;
-use App\Language;
-use App\Setting;
-use App\User;
-use App\Vehicle;
-use Carbon\Carbon;
+use App\Models\Language;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\Facades\DataTables;
 
 class DealerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -36,7 +26,7 @@ class DealerController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -71,11 +61,11 @@ class DealerController extends Controller
 
         } else{
             $validator_array = [
-                'name'                => 'required|max:255',
-                'country_code'        => 'required',
-                'mobile_no'           => 'required|max:30',
-                'iban'                => 'required|max:255',
-                'license_number'      => 'required|max:255',
+                'name'           => 'required|max:255',
+                'country_code'   => 'required',
+                'mobile_no'      => 'required|max:30',
+                'iban'           => 'required|max:255',
+                'license_number' => 'required|max:255',
             ];
             //$duplicate_email = User::where('email', $request->input('email'))->where('id', '!=', $id)->first();
             $duplicate_mobile_no = User::where('mobile_no', $request->input('mobile_no'))->where('id', '!=', $id)->first();
@@ -143,9 +133,9 @@ class DealerController extends Controller
             } else{
 
                 User::where('id', $id)->update([
-                    'name'      => $request->input('name'),
+                    'name'         => $request->input('name'),
                     'country_code' => $request->input('country_code'),
-                    'mobile_no' => $request->input('mobile_no'),
+                    'mobile_no'    => $request->input('mobile_no'),
                 ]);
 
 
@@ -163,13 +153,13 @@ class DealerController extends Controller
                 }
 
                 Company::where('user_id', $id)->update([
-                    'name'                => $request->input('business_name'),
-                    'contact_name'        => $request->input('name'),
-                    
+                    'name'         => $request->input('business_name'),
+                    'contact_name' => $request->input('name'),
+
                     'mobile_no'           => $request->input('mobile_no'),
                     'business_number'     => $request->input('business_number'),
                     'security_deposit'    => $request->input('security_deposit'),
-                    'country_code' =>        $request->input('country_code'),
+                    'country_code'        => $request->input('country_code'),
                     'bank_name'           => $request->input('bank_name'),
                     'bank_address'        => $request->input('bank_address'),
                     'bank_contact_number' => $request->input('bank_contact_number'),
@@ -188,15 +178,15 @@ class DealerController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    
+
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\App\Modelslication|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -206,7 +196,7 @@ class DealerController extends Controller
 
         if($user){
             $languages = Language::all();
-            return view('dealer.dealer.edit', ['user' => $user, 'languages' => $languages,'countries'=>$countries]);
+            return view('dealer.dealer.edit', ['user' => $user, 'languages' => $languages, 'countries' => $countries]);
         } else{
             abort(404);
         }

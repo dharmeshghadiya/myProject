@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\User;
-use App\Company;
-use App\Device;
+use App\Models\User;
+use App\Models\Company;
+use App\Models\Device;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,10 +14,8 @@ use Illuminate\Support\Str;
 use League\Flysystem\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
-use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 use App\Mail\ResetPasswordEmail;
 use App\Mail\VerificationEmail;
-use Illuminate\Support\Facades\URL;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Requests\API\AppleLoginRequest;
 use App\Http\Requests\API\FacebookLoginRequest;
@@ -426,7 +424,7 @@ class UserController extends Controller
         ], 200);
     }
 
-    public function appleLogin(AppleLoginRequest $request)
+    public function AppleLogin(AppleLoginRequest $request)
     {
         if($request->email != NULL){
             $user = User::where('email', $request->email)->first();

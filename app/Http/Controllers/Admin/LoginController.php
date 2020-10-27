@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use App\User;
+use App\Models\User;
 use Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

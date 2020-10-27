@@ -3,17 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\WelcomeUserMail;
-use App\User;
-use App\EmailString;
+use App\Models\User;
+use App\Models\EmailString;
 use DB;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\URL;
 
 
 class VerifyEmailController extends Controller

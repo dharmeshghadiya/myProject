@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Resources\PageResource;
-use App\Page;
-use Illuminate\Http\Request;
+use App\Models\Page;
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller

@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Dealer;
 
-use App\ContactUs;
-use App\ReportProblem;
-use App\User;
-use App\Helpers\ImageUploadHelper;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class PasswordController extends Controller
 {
@@ -31,7 +28,7 @@ class PasswordController extends Controller
             $current_password = $request->input('current_password');
             $new_password = $request->input('new_password');
             $confirmed_password = $request->input('confirmed_password');
-            
+
             if($new_password !=$confirmed_password){
             return response()->json(['success' => false, 'message' => trans('adminMessages.password_does_not_match')]);
             }
@@ -46,7 +43,7 @@ class PasswordController extends Controller
                 }else{
                     return response()->json(['success' => false, 'message' => trans('adminMessages.password_not_changed')]);
                 }
-              
+
 
 
             }else{

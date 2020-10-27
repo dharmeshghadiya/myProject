@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Booking;
-use App\BookingInspection;
+use App\Models\Booking;
+use App\Models\BookingInspection;
 use Carbon\Carbon;
 use DB;
 use App\Helpers\ImageUploadHelper;

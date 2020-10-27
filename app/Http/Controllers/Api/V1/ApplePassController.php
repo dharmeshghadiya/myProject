@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Booking;
-use Illuminate\Http\Request;
+use App\Models\Booking;
 use Illuminate\Http\Response;
 use Thenextweb\PassGenerator;
 use App\Http\Controllers\Controller;
