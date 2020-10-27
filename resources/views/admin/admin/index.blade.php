@@ -23,7 +23,7 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$5,74.12</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i class="fas fa-arrow-circle-up text-white"></i> <span
+                            <span class="float-right my-auto ml-auto"> <em class="fas fa-arrow-circle-up text-white"></em> <span
                                         class="text-white op-7"> +427</span> </span></div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$1,230.17</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i
-                                        class="fas fa-arrow-circle-down text-white"></i> <span class="text-white op-7"> -23.09%</span> </span>
+                            <span class="float-right my-auto ml-auto"> <em
+                                        class="fas fa-arrow-circle-down text-white"></em> <span class="text-white op-7"> -23.09%</span> </span>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$7,125.70</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i class="fas fa-arrow-circle-up text-white"></i> <span
+                            <span class="float-right my-auto ml-auto"> <em class="fas fa-arrow-circle-up text-white"></em> <span
                                         class="text-white op-7"> 52.09%</span> </span></div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                             <p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
                                         </div>
                                         <span class="float-right my-auto ml-auto">
-                                            <i class="fas fa-arrow-circle-down text-white"></i>
+                                            <em class="fas fa-arrow-circle-down text-white"></em>
                                             <span class="text-white op-7"> -152.3</span>
                                         </span>
                                     </div>
@@ -154,7 +154,7 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$5,74.12</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i class="fas fa-arrow-circle-up text-white"></i> <span
+                            <span class="float-right my-auto ml-auto"> <em class="fas fa-arrow-circle-up text-white"></em> <span
                                         class="text-white op-7"> +427</span> </span></div>
                     </div>
                 </div>
@@ -170,8 +170,8 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$1,230.17</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i
-                                        class="fas fa-arrow-circle-down text-white"></i> <span class="text-white op-7"> -23.09%</span> </span>
+                            <span class="float-right my-auto ml-auto"> <em
+                                        class="fas fa-arrow-circle-down text-white"></em> <span class="text-white op-7"> -23.09%</span> </span>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                         <div class="d-flex">
                             <div class=""><h4 class="tx-20 font-weight-bold mb-1 text-white">$7,125.70</h4>
                                 <p class="mb-0 tx-12 text-white op-7">Compared to last week</p></div>
-                            <span class="float-right my-auto ml-auto"> <i class="fas fa-arrow-circle-up text-white"></i> <span
+                            <span class="float-right my-auto ml-auto"> <em class="fas fa-arrow-circle-up text-white"></em> <span
                                         class="text-white op-7"> 52.09%</span> </span></div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                                             <p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
                                         </div>
                                         <span class="float-right my-auto ml-auto">
-                                            <i class="fas fa-arrow-circle-down text-white"></i>
+                                            <em class="fas fa-arrow-circle-down text-white"></em>
                                             <span class="text-white op-7"> -152.3</span>
                                         </span>
                                     </div>
