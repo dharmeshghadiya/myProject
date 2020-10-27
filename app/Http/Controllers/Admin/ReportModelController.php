@@ -19,7 +19,9 @@ class ReportModelController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
+            //DB::enableQueryLog();
             $reportModel = ReportModel::with('brand','modelYear','toYear','color','companies')->get();
+            // dd(DB::getQueryLog());
             return Datatables::of($reportModel)
               ->addColumn('company', function($reportModel){
 

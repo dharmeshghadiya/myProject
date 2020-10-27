@@ -46,7 +46,9 @@ class BookingController extends Controller
     {
 
         if($request->ajax()){
+            //DB::enableQueryLog();
             $bookings = Booking::with('company', 'companyAddress', 'user')->get();
+            //dd(DB::getQueryLog());
             return Datatables::of($bookings)
                 ->addColumn('transaction_id', function($bookings){
                     return $bookings->transaction_id;
@@ -332,6 +334,7 @@ class BookingController extends Controller
         if($validator->fails()){
             return response()->json(['success' => false, 'message' => $validator->errors()->first()]);
         }
+        //DB::enableQueryLog();
 
         $is_affected = Booking::where('id', $request->input('booking_id'))->update([
             'adjustment' => $request->input('adjustment'),
@@ -346,6 +349,7 @@ class BookingController extends Controller
                 ]);
             }
         }
+        // dd(DB::getQueryLog());
         return response()->json(['success' => true, 'message' => config('languageString.adjustment_successfully'),]);
     }
 

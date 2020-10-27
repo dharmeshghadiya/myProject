@@ -25,12 +25,12 @@ class BrandModelController extends Controller
     {
 
         if ($request->ajax()) {
-
+            //   DB::enableQueryLog();
             $models = BrandModel::listsTranslations('name')
                 ->with('brand')
                 ->select('brand_models.id', 'brand_models.brand_id', 'brand_models.image')
                 ->get();
-
+            //    dd(DB::getQueryLog());
             return Datatables::of($models)
                 ->addColumn('action', function ($models) {
                     $edit_button = '<a href="' . route('admin::model.edit', [$models->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Edit"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

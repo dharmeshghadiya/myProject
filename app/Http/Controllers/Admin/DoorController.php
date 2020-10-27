@@ -28,11 +28,11 @@ class DoorController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $doors = Door::listsTranslations('name')
                 ->select('doors.id')
                 ->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($doors)
                 ->addColumn('action', function($doors){
                     $edit_button = '<a href="' . route('admin::door.edit', [$doors->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

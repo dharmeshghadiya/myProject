@@ -29,7 +29,7 @@ class SubAdminController extends Controller
                     $query->orWhere('id', '!=', Auth::id());
                 })->get();
 
-
+            // dd(DB::getQueryLog());
             return Datatables::of($users)
                 ->addColumn('action', function($users){
                     $edit_button = '<a href="' . route('admin::admins.edit', [$users->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

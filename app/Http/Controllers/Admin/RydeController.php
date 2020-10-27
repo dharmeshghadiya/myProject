@@ -47,7 +47,10 @@ class RydeController extends Controller
     {
 
         if($request->ajax()){
+            //DB::enableQueryLog();
             $rydes = Ryde::with('brand', 'modelYear', 'color', 'rydeInstance')->get();
+            //dd(DB::getQueryLog());
+            //dd($rydes);
             return Datatables::of($rydes)
                 ->addColumn('image', function($rydes){
                     $url = asset($rydes->image);

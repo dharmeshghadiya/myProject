@@ -85,40 +85,8 @@ class DealerBookingController extends Controller
                 $array[$i]['image'] = $booking->vehicles->ryde->image;
                 $array[$i]['year'] = $booking->vehicles->ryde->modelYear->name;
                 $array[$i]['color'] = $booking->vehicles->ryde->color->name;
+                $array[$i]['status'] = $booking->status;
 
-                if($request->input('type') == 0){
-                    if(Carbon::parse($booking->start_date)->format('Y-m-d H:i:s') > $server_current_time_zone->format('Y-m-d H:i:s')){
-                        $array[$i]['status'] = Config('languageString.up_coming_status');
-                    } else{
-                        $booking_start_date = Carbon::createFromFormat('Y-m-d H:i:s', $booking->start_date, $request->input('timezone'));
-                        $diff_in_hour = $booking_start_date->diffInHours($server_current_time_zone, false);
-
-                        if($diff_in_hour < 3 && $booking->is_pickup == 0){
-                            $array[$i]['status'] = Config('languageString.due_for_pickup_status');
-                        } else{
-                            $array[$i]['status'] = Config('languageString.missed_pickup_status');
-                        }
-                    }
-                } else if($request->input('type') == 1){
-                    if(Carbon::parse($booking->end_date)->format('Y-m-d  H:i:s') > $server_current_time_zone->format('Y-m-d  H:i:s') && $booking->is_pickup == 1 && $booking->is_return == 0){
-                        $array[$i]['status'] = Config('languageString.active_status');
-                    } else{
-                        $booking_start_date = Carbon::createFromFormat('Y-m-d H:i:s', $booking->end_date, $request->input('timezone'));
-                        $diff_in_hour = $booking_start_date->diffInHours($server_current_time_zone, false);
-
-                        if($diff_in_hour < 3 && $booking->is_pickup == 1 && $booking->is_return == 0){
-                            $array[$i]['status'] = Config('languageString.missed_return_status');
-                        } else{
-                            $array[$i]['status'] = Config('languageString.due_for_return_status');
-                        }
-                    }
-                } else if($request->input('type') == 2){
-                    $array[$i]['status'] = Config('languageString.complete_status');
-                } else if($request->input('type') == 3){
-                    $array[$i]['status'] = Config('languageString.cancelled_status');
-                } else if($request->input('type') == 4){
-                    $array[$i]['status'] = Config('languageString.no_show_status');
-                }
                 $i++;
             }
 

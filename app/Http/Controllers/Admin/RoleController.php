@@ -21,7 +21,9 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            //DB::enableQueryLog();
             $roles = Role::get();
+            // dd(DB::getQueryLog());
             return Datatables::of($roles)
                 ->addColumn('action', function ($roles) {
                     $edit_button = '<a href="' . route('admin::roles.edit', [$roles->id]) . '" class="btn btn-sm btn-outline-info waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

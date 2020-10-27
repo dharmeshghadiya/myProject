@@ -19,9 +19,11 @@ class PageController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
+            //DB::enableQueryLog();
             $bodies = Page::listsTranslations('name')
                 ->select('pages.id', 'pages.for')
                 ->get();
+            // dd(DB::getQueryLog());
             return Datatables::of($bodies)
                 ->addColumn('action', function($bodies){
                     return '<a href="' . route('admin::page.edit', [$bodies->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

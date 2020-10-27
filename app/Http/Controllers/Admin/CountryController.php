@@ -21,11 +21,11 @@ class CountryController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $countries = Country::listsTranslations('name','tax_name')
                 ->select('countries.id', 'countries.code', 'countries.country_code','countries.tax_percentage')
                 ->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($countries)
                 ->addColumn('action', function($countries){
                     $edit_button = '<a href="' . route('admin::country.edit', [$countries->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

@@ -18,9 +18,9 @@ class ContactUsController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $contactus = ContactUs::with('user')->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($contactus)
                 ->addColumn('action', function($contactus){
                     $delete_button = '<button data-id="' . $contactus->id . '" class="delete-single btn btn-danger btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.delete') . '"><i class="bx bx-trash font-size-16 align-middle"></i></button>';

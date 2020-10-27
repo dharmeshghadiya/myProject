@@ -23,10 +23,12 @@ class AnnouncementController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            //DB::enableQueryLog();
             $announcements = Announcement::listsTranslations('name')
                 ->with('countries')
                 ->select('announcements.id', 'announcements.country_id')
                 ->get();
+            // dd(DB::getQueryLog());
             return Datatables::of($announcements)
                 ->addColumn('country', function ($announcements) {
                     return $announcements->countries->name;

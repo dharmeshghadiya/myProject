@@ -21,7 +21,7 @@ class LanguageController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-
+            //DB::enableQueryLog();
             $languages = Language::all();
             return Datatables::of($languages)
                 ->addColumn('action', function ($languages) {

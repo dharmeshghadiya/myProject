@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dealer;
 
 use App\Booking;
 use App\BookingDetails;
+use App\Helpers\BookingStatusHelper;
 use App\Body;
 use App\Brand;
 use App\Color;
@@ -50,9 +51,9 @@ class BookingController extends Controller
     {
 
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $bookings = Booking::where('company_id', Session('company_id'))->with('company', 'companyAddress', 'user')->get();
-
+            //dd(DB::getQueryLog());
             return Datatables::of($bookings)
                 ->addColumn('id', function($bookings){
                     return $bookings->transaction_id;
@@ -67,39 +68,24 @@ class BookingController extends Controller
                     return $bookings->user->name;
                 })
                 ->addColumn('mobile_no', function($bookings){
-                    return $bookings->user->mobile_no;
+                    return "+" . $bookings->user->country_code . ' ' . $bookings->user->mobile_no;
                 })
                 ->addColumn('booking_date', function($bookings){
-                    return Carbon::parse($bookings->start_date)->format('d-m-Y') . '  -  ' . Carbon::parse($bookings->end_date)->format('d-m-Y');
+                    return Carbon::parse($bookings->start_date)->format('d-m-Y h:i A') . '  <br>  ' . Carbon::parse($bookings->end_date)->format('d-m-Y h:i A');
                 })
                 ->addColumn('total_day_rent', function($bookings){
                     return "$" . $bookings->total_day_rent;
                 })
                 ->addColumn('status', function($bookings){
-
-                    if($bookings->status == 'Booked'){
-                        $status = '<span class=" badge badge-primary">' . config('languageString.booked') . '</span>';
-                    }
-                    if($bookings->status == 'Completed'){
-                        $status = '<span  class=" badge badge-success">' . config('languageString.completed') . '</span>';
-                    }
-                    if($bookings->status == 'Cancelled'){
-                        $status = '<span  class=" badge badge-danger">' . config('languageString.cancelled') . '</span>';
-                    }
-                    if($bookings->status == 'Review'){
-                        $status = '<span  class=" badge badge-info">' . config('languageString.review') . '</span>';
-                    }
-                    return $status;
+                    $get_booking_status = BookingStatusHelper::getBookingStatus($bookings);
+                    return $get_booking_status[0];
 
                 })
                 ->addColumn('action', function($bookings){
-
-
                     $view_detail_button = '<button data-id="' . $bookings->id . '" class="booking-details btn btn-secondary btn-icon" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.view_details') . '"><i class="bx bx-bullseye font-size-16 align-middle"></i></button>';
-
                     return '<div class="btn-icon-list">' . $view_detail_button . '</div>';
                 })
-                ->rawColumns(['action', 'status'])
+                ->rawColumns(['action', 'status', 'booking_date'])
                 ->make(true);
         }
         return view('dealer.booking.index');
@@ -213,22 +199,26 @@ class BookingController extends Controller
         </th><th>' . config('languageString.daily_amount') . '</th><th>' . config('languageString.weekly_amount') . '</th><th>' . config('languageString.monthly_amount') . '</th></tr></thead>';
             $array['globalModalDetails'] .= '<tr>';
             $array['globalModalDetails'] .= '<td>' . $booking->vehicles->ryde->color->name . '</td>';
-            $array['globalModalDetails'] .= '<td>' . '$ ' . $booking->vehicles->hourly_amount . '</td>';
-            $array['globalModalDetails'] .= '<td>' . '$ ' . $booking->vehicles->daily_amount . '</td>';
-            $array['globalModalDetails'] .= '<td>' . '$ ' . $booking->vehicles->weekly_amount . '</td>';
-            $array['globalModalDetails'] .= '<td>' . '$ ' . $booking->vehicles->monthly_amount . '</td>';
+            $array['globalModalDetails'] .= '<td>$' . $booking->vehicles->hourly_amount . '</td>';
+            $array['globalModalDetails'] .= '<td>$' . $booking->vehicles->daily_amount . '</td>';
+            $array['globalModalDetails'] .= '<td>$' . $booking->vehicles->weekly_amount . '</td>';
+            $array['globalModalDetails'] .= '<td>$' . $booking->vehicles->monthly_amount . '</td>';
             $array['globalModalDetails'] .= '</tr>';
             $array['globalModalDetails'] .= '</table>';
 
             // further booking details
             $array['globalModalDetails'] .= '<table class="table table-bordered">';
             $array['globalModalDetails'] .= '<thead class="thead-light"><tr><th colspan="4" class="text-center">' . config('languageString.booking_details') . '</th></tr></thead>';
-            $array['globalModalDetails'] .= '<thead class="thead-dark"><tr><th>' . config('languageString.pick_up_location') . '</th><th>' . config('languageString.pick_up_latitude') . '</th><th>' . config('languageString.pick_up_longitude') . '</th><th>' . config('languageString.message') . '</th></tr></thead>';
+            $array['globalModalDetails'] .= '<thead class="thead-dark"><tr><th>' . config('languageString.pick_up_location') . '</th><th>' . config('languageString.pick_up_latitude') . '</th><th>' . config('languageString.pick_up_longitude') . '</th></tr></thead>';
             $array['globalModalDetails'] .= '<tr>';
             $array['globalModalDetails'] .= '<td>' . $booking->pick_up_location . '</td>';
             $array['globalModalDetails'] .= '<td>' . $booking->pick_up_latitude . '</td>';
             $array['globalModalDetails'] .= '<td>' . $booking->pick_up_longitude . '</td>';
-            $array['globalModalDetails'] .= '<td>' . $booking->message . '</td>';
+
+            $array['globalModalDetails'] .= '</tr>';
+            $array['globalModalDetails'] .= '<tr>';
+            $array['globalModalDetails'] .= '<th>' . config('languageString.message') . '</th>';
+            $array['globalModalDetails'] .= '<td colspan="2">' . $booking->message . '</td>';
             $array['globalModalDetails'] .= '</tr>';
             $array['globalModalDetails'] .= '</table>';
 
@@ -276,13 +266,17 @@ class BookingController extends Controller
             $array['globalModalDetails'] .= '</tr>';
             $array['globalModalDetails'] .= '<tr>';
             $array['globalModalDetails'] .= '<td class="text-right">' . config('languageString.adjustment') . '</td>';
-            $array['globalModalDetails'] .= '<td class="text-right">$' . $booking->adjustment . '</td>';
+            if(!empty($booking->adjustment)){
+                $array['globalModalDetails'] .= '<td class="text-right">$' . $booking->adjustment . '</td>';
+            } else{
+                $array['globalModalDetails'] .= '<td class="text-right">$0</td>';
+            }
 
             $array['globalModalDetails'] .= '<tr>';
             $array['globalModalDetails'] .= '<td class="text-right">' . config('languageString.final_amount') . '</td>';
             if(!empty($commission->commission_amount)){
                 $array['globalModalDetails'] .= '<td class="text-right">$' . $commission->commission_amount . '</td>';
-            }else{
+            } else{
                 $array['globalModalDetails'] .= '<td class="text-right">$0</td>';
             }
             $array['globalModalDetails'] .= '</tr>';
@@ -314,7 +308,7 @@ class BookingController extends Controller
 
         $start_date = Carbon::parse($pick_up_date)->format("Y-m-d H:i:s");
         $end_date = Carbon::parse($return_date)->format("Y-m-d H:i:s");
-
+        // dd($start_date);
 
         $no_of_days = Carbon::parse($pick_up_date)->diffInDays($end_date);
         $no_of_hour = Carbon::parse($pick_up_date)->diffInHours($end_date);
@@ -377,16 +371,16 @@ class BookingController extends Controller
 
     public function inRideBetween($start_date, $end_date, $vehicle_id)
     {
-
+        // DB::enableQueryLog();
         return Booking::where(function($query) use ($start_date, $end_date){
             $query->whereBetween('start_date', [$start_date, $end_date]);
             $query->OrWhereBetween('end_date', [$start_date, $end_date]);
         })->where('vehicle_id', $vehicle_id)
-            ->where('status','!=', 'Rejected')
-            ->where('status','!=', 'Review')
-            ->where('status','!=', 'Cancelled')
-            ->where('status','!=', 'Completed')->count();
-
+            ->where('status', '!=', 'Rejected')
+            ->where('status', '!=', 'Review')
+            ->where('status', '!=', 'Cancelled')
+            ->where('status', '!=', 'Completed')->count();
+        // dd(DB::getQueryLog());
 
     }
 

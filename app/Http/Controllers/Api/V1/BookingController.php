@@ -29,7 +29,7 @@ class BookingController extends Controller
             'company_address_id' => 'required',
             'vehicle_id'         => 'required',
             'start_date'         => 'required',
-            'end_date'           => 'required',
+            'end_date'           => 'required|after_or_equal:start_date',
             'total_day_rent'     => 'required',
             'sub_total'          => 'required',
             'pick_up_location'   => 'required',
@@ -281,13 +281,14 @@ class BookingController extends Controller
                 $array['tax_name'] = $company_details->country->tax_name;
             }
 
+            // DB::enableQueryLog();
 
             $extras = BookingDetails::with([
                 'vehicleExtra' => function($query){
                     $query->with('extra');
                 },
             ])->where('booking_id', $request->input('booking_id'))->get();
-
+            //  dd(DB::getQueryLog());
             $extra_array = [];
             foreach($extras as $key => $extra){
                 $extra_array[$key]['id'] = $extra->vehicleExtra->extra->id;

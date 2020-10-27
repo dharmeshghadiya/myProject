@@ -29,9 +29,11 @@ class BodyController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
+            //DB::enableQueryLog();
             $bodies = Body::listsTranslations('name')
                 ->select('bodies.id','bodies.front_image','back_image','right_image','left_image')
                 ->get();
+            // dd(DB::getQueryLog());
             return Datatables::of($bodies)
                         ->addColumn('front_image', function($bodies){
                     $front_image = '';

@@ -34,7 +34,7 @@ class CategoryController extends Controller
             ], 403);
         }
 
-
+        //  DB::enableQueryLog();
 
         $country_data = Country::where('country_code', $request->input('country_code'))->first();
 

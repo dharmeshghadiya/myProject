@@ -26,11 +26,11 @@ class FuelController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $fuels = Fuel::listsTranslations('name')
                 ->select('fuels.id')
                 ->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($fuels)
                 ->addColumn('action', function($fuels){
                     $edit_button = '<a href="' . route('admin::fuel.edit', [$fuels->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

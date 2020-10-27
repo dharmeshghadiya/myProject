@@ -28,11 +28,11 @@ class EngineController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $engines = Engine::listsTranslations('name')
                 ->select('engines.id')
                 ->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($engines)
                 ->addColumn('action', function($engines){
                     $edit_button = '<a href="' . route('admin::engine.edit', [$engines->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

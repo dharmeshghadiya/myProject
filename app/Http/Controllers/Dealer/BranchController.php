@@ -44,9 +44,9 @@ class BranchController extends Controller
     {
 
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $company_addresses = CompanyAddress::where('company_id', Session('company_id'))->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($company_addresses)
                 ->addColumn('action', function($company_addresses){
                     $edit_button = '<a href="' . route('dealer::branch.edit', [$company_addresses->id]) . '" class="btn btn-icon btn-info" data-toggle="tooltip" data-placement="top" title="Edit"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

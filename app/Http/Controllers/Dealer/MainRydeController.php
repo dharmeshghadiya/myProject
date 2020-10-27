@@ -58,7 +58,7 @@ class MainRydeController extends Controller
             $year = $request->input('year');
             $make = $request->input('make');
             $filter = $request->input('filter');
-
+            // DB::enableQueryLog();
 
             $vehicles = Vehicle::where(['company_id' => Session('company_id')]);
 
@@ -94,7 +94,9 @@ class MainRydeController extends Controller
             }
 
             $vehicles = $vehicles->get();
-
+            //dd($vehicles);
+            //dd(DB::getQueryLog());
+            //dd($vehicles);
             return Datatables::of($vehicles)
                 ->addColumn('address', function($vehicles){
                     return $vehicles->companyAddress->address . '(' . $vehicles->companyAddress->service_distance . ' KM)';

@@ -40,16 +40,16 @@ class DealerController extends Controller
 
         if($request->ajax()){
             $country_id = $request->input('country_id');
-
+            //DB::enableQueryLog();
             if($country_id != NULL){
                 $user_ids = CompanyAddress::where('country_id', $country_id)->pluck('user_id')->toArray();
                 $dealers = User::wherein('id', $user_ids)->where('user_type', 'company')->where('parent_id', 0)->with('companies')->get();
             } else{
                 $dealers = User::where('user_type', 'company')->where('parent_id', 0)->with('companies')->get();
-
+                //dd($dealers);
             }
 
-
+            // dd(DB::getQueryLog());
             return Datatables::of($dealers)
                 ->addColumn('status', function($dealers){
                     if($dealers->status == 'Active'){
@@ -447,7 +447,7 @@ class DealerController extends Controller
      */
     public function addBranch($id, $company_id)
     {
-
+        // DB::enableQueryLog();
 
         $is_user = User::with([
             'companies' => function($query) use ($id, $company_id){

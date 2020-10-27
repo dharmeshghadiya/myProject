@@ -27,11 +27,11 @@ class GlobalExtraController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
+            //DB::enableQueryLog();
             $extras = GlobalExtra::listsTranslations('name')
                 ->select('global_extras.id')
                 ->get();
-
+            // dd(DB::getQueryLog());
             return Datatables::of($extras)
                 ->addColumn('action', function($extras){
                     $edit_button = '<a href="' . route('admin::globalExtra.edit', [$extras->id]) . '" class="btn btn-info btn-icon" data-toggle="tooltip" data-placement="top" title="' . config('languageString.edit') . '"><i class="bx bx-pencil font-size-16 align-middle"></i></a>';

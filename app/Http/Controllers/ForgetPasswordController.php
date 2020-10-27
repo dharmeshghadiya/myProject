@@ -54,6 +54,9 @@ class ForgetPasswordController extends Controller
             ];
             Mail::to($request->input('email'))->send(new ResetPasswordEmail($array));
 
+            //$user->sendPasswordResetNotification($token);
+
+            
 
             return redirect()->back()
                 ->with('success_message', Config('languageString.please_check_your_mail'));

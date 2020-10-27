@@ -17,7 +17,9 @@ class ReportProblemController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
+            //DB::enableQueryLog();
             $report_problems = ReportProblem::with('user')->get();
+            // dd(DB::getQueryLog());
             return Datatables::of($report_problems)
                 ->addColumn('action', function($report_problems){
                     $view_detail_button = '<button data-id="' . $report_problems->id . '" class="report-problem-details btn btn-secondary btn-icon" data-effect="effect-fall" data-toggle="tooltip" data-placement="top" title="' . config('languageString.view_details') . '"><i class="bx bx-bullseye font-size-16 align-middle"></i></button>';
